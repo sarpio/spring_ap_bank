@@ -15,7 +15,7 @@
 - Post one: save`component`
 - Delete one: delete`component`By`reference`
 
-###Sample:
+### Sample:
 
 Get one: finAccountById _where_
 `compnent` is "Account" and
