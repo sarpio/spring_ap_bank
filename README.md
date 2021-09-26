@@ -9,8 +9,8 @@
 
 ## Method types in Controller pattern:
 
-- Get all: findAll{component}
-- Get One: find{component}By{reference}
-- Put One: update{component}By{reference}
-- Post one: save{component}
-- Delete one: delete{component}By{reference}
+- Get all: findAll{_component_}
+- Get One: find{_component_}By{_reference_}
+- Put One: update{_component_}By{_reference_}
+- Post one: save{_component_}
+- Delete one: delete{_component_}By{_reference_}
