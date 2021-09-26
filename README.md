@@ -18,5 +18,5 @@
 ###Sample:
 
 Get one: finAccountById _where_
-`compnent` is Account and
-`reference` is Id
+`compnent` is "Account" and
+`reference` is "Id"
