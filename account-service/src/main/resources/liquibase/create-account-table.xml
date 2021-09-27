@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Anatolii" id="create-account-table">
+
+
+        <createTable tableName="account">
+            <column name="id" type="binary(16)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="account_number" type="bigint"/>
+            <column name="customer_id" type="binary(16)"/>
+            <column name="isForeign" type="varchar(10)"/>
+            <column name="type" type="varchar(10)"/>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
