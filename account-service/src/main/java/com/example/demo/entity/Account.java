@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -26,7 +27,7 @@ public class Account {
     private UUID customerId;
     @Column(name = "is_Foreign")
     private boolean isForeign;
-    @Column(name = "account_number")
+    @Column(name = "account_type")
     private Type type;
 }
 
