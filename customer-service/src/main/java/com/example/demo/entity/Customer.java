@@ -25,4 +25,5 @@ public class Customer {
     private UUID bankId;
     @Column(name = "name")
     private String name;
+
 }
