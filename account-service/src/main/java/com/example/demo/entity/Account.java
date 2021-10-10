@@ -11,10 +11,10 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@ToString
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Builder
+//@ToString
 public class Account {
     @Id
     @GeneratedValue(generator = "uuid2")
