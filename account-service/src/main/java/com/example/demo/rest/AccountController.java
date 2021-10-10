@@ -14,4 +14,27 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AccountController {
 
+    private final AccountServices accountServices;
+
+    @GetMapping
+    public ResponseEntity<List<AccountDTO>> getAllAccounts() {
+        return ResponseEntity.ok(accountServices.findAllAccounts());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<AccountDTO> getAccountById(@PathVariable UUID id) {
+        return ResponseEntity.ok(accountServices.findAccountById(id));
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<AccountDTO> createAccount(@Validated @RequestBody AccountDTO dto) {
+        AccountDTO account = accountServices.createAccount(dto);
+        return ResponseEntity.ok(account);
+    }
+
+    @DeleteMapping
+    public ResponseEntity<String> deleteAccountById(UUID id) {
+        String response = accountServices.deleteAccountById(id);
+        return ResponseEntity.ok(response);
+    }
 }
