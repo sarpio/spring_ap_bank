@@ -5,6 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/account-service/account-service.iml" filepath="$PROJECT_DIR$/account-service/account-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/customer-service/customer-service.iml" filepath="$PROJECT_DIR$/customer-service/customer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account-service/demo (1).iml" filepath="$PROJECT_DIR$/account-service/demo (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-service/demo (2).iml" filepath="$PROJECT_DIR$/config-service/demo (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-service/demo (3).iml" filepath="$PROJECT_DIR$/customer-service/demo (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-service/demo (4).iml" filepath="$PROJECT_DIR$/eureka-service/demo (4).iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-service/demo (5).iml" filepath="$PROJECT_DIR$/gateway-service/demo (5).iml" />
+      <module fileurl="file://$PROJECT_DIR$/operation-service/demo (6).iml" filepath="$PROJECT_DIR$/operation-service/demo (6).iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway-service.iml" filepath="$PROJECT_DIR$/gateway-service/gateway-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/operation-service/operation-service.iml" filepath="$PROJECT_DIR$/operation-service/operation-service.iml" />

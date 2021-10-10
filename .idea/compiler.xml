@@ -2,16 +2,23 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
-        <module name="operation-service" />
         <module name="config-service" />
-        <module name="account-service" />
+        <module name="demo (2)" />
         <module name="customer-service" />
+        <module name="demo (1)" />
         <module name="gateway-service" />
+        <module name="demo (4)" />
+        <module name="demo (3)" />
+        <module name="operation-service" />
+        <module name="demo (6)" />
+        <module name="demo (5)" />
+        <module name="account-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +26,12 @@
       <module name="config-service" target="11" />
       <module name="customer-service" target="11" />
       <module name="demo" target="11" />
+      <module name="demo (1)" target="11" />
+      <module name="demo (2)" target="11" />
+      <module name="demo (3)" target="11" />
+      <module name="demo (4)" target="11" />
+      <module name="demo (5)" target="11" />
+      <module name="demo (6)" target="11" />
       <module name="eureka-service" target="11" />
       <module name="gateway-service" target="11" />
       <module name="operation-service" target="11" />
@@ -29,6 +42,12 @@
       <module name="account-service" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="customer-service" options="-parameters" />
+      <module name="demo (1)" options="-parameters" />
+      <module name="demo (2)" options="-parameters" />
+      <module name="demo (3)" options="-parameters" />
+      <module name="demo (4)" options="-parameters" />
+      <module name="demo (5)" options="-parameters" />
+      <module name="demo (6)" options="-parameters" />
       <module name="eureka-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="operation-service" options="-parameters" />
