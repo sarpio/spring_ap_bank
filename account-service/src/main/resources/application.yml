@@ -1,6 +1,5 @@
 spring:
   datasource:
-#    url: 'jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11443408'
     url: 'jdbc:mysql://piotrsarnecki.com:3306/sarpio_account'
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: sarpio_account

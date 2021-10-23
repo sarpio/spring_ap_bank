@@ -1,0 +1,13 @@
+server:
+  port: 8889
+spring:
+  cloud:
+    config:
+      server:
+        default-label: main
+        git:
+          uri: https://github.com/sarpio/spring_ap_bank.git
+          search-paths: configuration
+          clone-on-start: true
+        native:
+          search-locations:
