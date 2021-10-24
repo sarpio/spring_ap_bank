@@ -8,17 +8,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
-        <module name="config-service" />
-        <module name="customer-service" />
         <module name="operation-service" />
+        <module name="config-server" />
         <module name="account-service" />
+        <module name="gateway-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account-service" target="11" />
+      <module name="config-server" target="11" />
       <module name="config-service" target="11" />
       <module name="config-service (1)" target="11" />
       <module name="customer-service" target="11" />
+      <module name="demo" target="11" />
       <module name="demo (1)" target="11" />
       <module name="demo (2)" target="11" />
       <module name="demo (3)" target="11" />
@@ -33,9 +35,11 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="account-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="config-service (1)" options="-parameters" />
       <module name="customer-service" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="demo (1)" options="-parameters" />
       <module name="demo (2)" options="-parameters" />
       <module name="demo (3)" options="-parameters" />
