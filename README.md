@@ -17,6 +17,14 @@
 
 ### Sample:
 
-Get one: finAccountById _where_
+Get one: finAccountById _where_:
 `compnent` is "Account" and
 `reference` is "Id"
+
+## Configuration Service
+Default configuration file in services have been replaced by `bootstrap.yml`
+File contains only basic configuration required to be available locally by service only.
+All other configuration is has been in `configruation` _folder_ inb application `root`.
+
+
+
