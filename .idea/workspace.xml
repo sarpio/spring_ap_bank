@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/demo/GatewayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/demo/GatewayServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/create-account-table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/create-account-table.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,9 +217,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.OperationServiceApplication" />
         <item itemvalue="Spring Boot.AccountServiceApplication" />
         <item itemvalue="JUnit.All in config-server" />
-        <item itemvalue="Spring Boot.OperationServiceApplication" />
         <item itemvalue="JUnit.All in demo (1)" />
         <item itemvalue="JUnit.All in demo" />
       </list>
@@ -244,7 +241,7 @@
       <workItem from="1635093515563" duration="1591000" />
       <workItem from="1635158949581" duration="1308000" />
       <workItem from="1635160306385" duration="23000" />
-      <workItem from="1636294036625" duration="4531000" />
+      <workItem from="1636294036625" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -330,7 +327,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636298071299</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Account with default Controller Configuration">
+      <created>1636298641848</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1636298641848</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Account with default Controller Configuration">
+      <created>1636298683147</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636298683147</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Account with default Controller Configuration">
+      <created>1636298708361</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636298708361</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
