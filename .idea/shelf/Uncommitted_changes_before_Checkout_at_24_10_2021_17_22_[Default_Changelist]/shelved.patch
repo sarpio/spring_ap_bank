@@ -1,0 +1,128 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a1742649-6f81-42a1-ab9a-5b5c02974afd\" name=\"Default Changelist\" comment=\"Account with default Controller Configuration\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"account_controller_basic_config\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"myId2FirstActivated\">\r\n      <map>\r\n        <entry key=\"JPA Inspector\" value=\"true\" />\r\n        <entry key=\"JPA Palette\" value=\"true\" />\r\n        <entry key=\"JPA Structure\" value=\"true\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"JPA Inspector\" value=\"true\" />\r\n        <entry key=\"JPA Palette\" value=\"false\" />\r\n        <entry key=\"JPA Structure\" value=\"true\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1yjS8re38hRd83j69xf4dybFNfO\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showModules\" value=\"false\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RequestMappingsPanelOrder0\" value=\"0\" />\r\n    <property name=\"RequestMappingsPanelOrder1\" value=\"1\" />\r\n    <property name=\"RequestMappingsPanelWidth0\" value=\"75\" />\r\n    <property name=\"RequestMappingsPanelWidth1\" value=\"75\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n    <property name=\"jdk.selected.JAVA_MODULE\" value=\"11\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.152439\" />\r\n  </component>\r\n  <component name=\"ReactorSettings\">\r\n    <option name=\"notificationShown\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\_JAVA_PROJEKTY\\MICROSERVICES\\spring_ap_bank\\config-service\\src\\main\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"configurationTypes\">\r\n      <set>\r\n        <option value=\"SpringBootApplicationConfigurationType\" />\r\n      </set>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.ConfigServiceApplication\">\r\n    <configuration type=\"MavenRunConfiguration\" factoryName=\"Maven\">\r\n      <MavenSettings>\r\n        <option name=\"myGeneralSettings\" />\r\n        <option name=\"myRunnerSettings\" />\r\n        <option name=\"myRunnerParameters\">\r\n          <MavenRunnerParameters>\r\n            <option name=\"profiles\">\r\n              <set />\r\n            </option>\r\n            <option name=\"goals\">\r\n              <list />\r\n            </option>\r\n            <option name=\"pomFileName\" />\r\n            <option name=\"profilesMap\">\r\n              <map />\r\n            </option>\r\n            <option name=\"resolveToWorkspace\" value=\"false\" />\r\n            <option name=\"workingDirPath\" value=\"\" />\r\n          </MavenRunnerParameters>\r\n        </option>\r\n      </MavenSettings>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"ArquillianTestNG\" factoryName=\"\" nameIsGenerated=\"true\">\r\n      <option name=\"arquillianRunConfiguration\">\r\n        <value>\r\n          <option name=\"containerStateName\" value=\"\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"All in demo (1)\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"config-service\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"package\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"All in demo\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"config-service\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"package\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"AccountServiceApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"account-service\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.demo.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.example.demo.AccountServiceApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ConfigServiceApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\">\r\n      <module name=\"config-service\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.example.demo.ConfigServiceApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"CustomerServiceApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"customer-service\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.demo.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.example.demo.CustomerServiceApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"OperationServiceApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"operation-service\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.demo.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.example.demo.OperationServiceApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"JUnit.All in demo\" />\r\n      <item itemvalue=\"JUnit.All in demo (1)\" />\r\n      <item itemvalue=\"Spring Boot.AccountServiceApplication\" />\r\n      <item itemvalue=\"Spring Boot.CustomerServiceApplication\" />\r\n      <item itemvalue=\"Spring Boot.OperationServiceApplication\" />\r\n      <item itemvalue=\"Spring Boot.ConfigServiceApplication\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.OperationServiceApplication\" />\r\n        <item itemvalue=\"Spring Boot.CustomerServiceApplication\" />\r\n        <item itemvalue=\"Spring Boot.AccountServiceApplication\" />\r\n        <item itemvalue=\"JUnit.All in demo (1)\" />\r\n        <item itemvalue=\"JUnit.All in demo\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a1742649-6f81-42a1-ab9a-5b5c02974afd\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1632763349460</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1632763349460</updated>\r\n      <workItem from=\"1633870081531\" duration=\"5427000\" />\r\n      <workItem from=\"1633875574492\" duration=\"1086000\" />\r\n      <workItem from=\"1633877528151\" duration=\"7000\" />\r\n      <workItem from=\"1633877590095\" duration=\"2886000\" />\r\n      <workItem from=\"1635004959811\" duration=\"3169000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"test commit\">\r\n      <created>1632765614613</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1632765614613</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"test commit\">\r\n      <created>1632765699839</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1632765699839</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"test commit\">\r\n      <created>1632765814122</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1632765814122</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"test commit\">\r\n      <created>1632845346814</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1632845346815</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Change Name Aureka to Eureka\">\r\n      <created>1633870335104</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1633870335104</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Added mysql support\">\r\n      <created>1633881263174</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1633881263174</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Added mysql support\">\r\n      <created>1633882665763</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1633882665763</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Added mysql support\">\r\n      <created>1633882672120</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1633882672120</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Account with default Controller Configuration\">\r\n      <created>1633882736345</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1633882736345</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Account with default Controller Configuration\">\r\n      <created>1635008094158</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1635008094158</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Account with default Controller Configuration\">\r\n      <created>1635008155048</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1635008155048</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"12\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"test commit\" />\r\n    <MESSAGE value=\"Change Name Aureka to Eureka\" />\r\n    <MESSAGE value=\"Added mysql support\" />\r\n    <MESSAGE value=\"Account with default Controller Configuration\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Account with default Controller Configuration\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,7 +4,18 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration" />
++    <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_bootstrap_3_0_4.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/customer-service/src/main/resources/bootstrap.yml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/operation-service/src/main/resources/bootstrap.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/account-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/customer-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/example/demo/CustomerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/example/demo/CustomerServiceApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/customer-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/resources/application.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/operation-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/pom.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -59,7 +70,7 @@
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+     <property name="jdk.selected.JAVA_MODULE" value="11" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/customer-service" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+@@ -72,6 +83,10 @@
+     <option name="notificationShown" value="true" />
+   </component>
+   <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="D:\_JAVA_PROJEKTY\MICROSERVICES\spring_ap_bank\operation-service\src\main\resources" />
++      <recent name="D:\_JAVA_PROJEKTY\MICROSERVICES\spring_ap_bank\customer-service\src\main\resources" />
++    </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="D:\_JAVA_PROJEKTY\MICROSERVICES\spring_ap_bank\config-service\src\main" />
+     </key>
+@@ -107,15 +122,13 @@
+       </MavenSettings>
+       <method v="2" />
+     </configuration>
+-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
++    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+       <option name="arquillianRunConfiguration">
+         <value>
+           <option name="containerStateName" value="" />
+         </value>
+       </option>
+-      <option name="TEST_OBJECT" value="CLASS" />
+-      <properties />
+-      <listeners />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -165,6 +178,13 @@
+         </pattern>
+       </extension>
+       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.CustomerServiceApplication" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
++      <module name="eureka-service" />
++      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.EurekaApplication" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -185,16 +205,17 @@
+     <list>
+       <item itemvalue="JUnit.All in demo" />
+       <item itemvalue="JUnit.All in demo (1)" />
++      <item itemvalue="Spring Boot.ConfigServiceApplication" />
+       <item itemvalue="Spring Boot.AccountServiceApplication" />
+       <item itemvalue="Spring Boot.CustomerServiceApplication" />
+       <item itemvalue="Spring Boot.OperationServiceApplication" />
+-      <item itemvalue="Spring Boot.ConfigServiceApplication" />
++      <item itemvalue="Spring Boot.EurekaApplication" />
+     </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Spring Boot.OperationServiceApplication" />
+         <item itemvalue="Spring Boot.CustomerServiceApplication" />
+         <item itemvalue="Spring Boot.AccountServiceApplication" />
++        <item itemvalue="Spring Boot.OperationServiceApplication" />
+         <item itemvalue="JUnit.All in demo (1)" />
+         <item itemvalue="JUnit.All in demo" />
+       </list>
+@@ -212,7 +233,8 @@
+       <workItem from="1633875574492" duration="1086000" />
+       <workItem from="1633877528151" duration="7000" />
+       <workItem from="1633877590095" duration="2886000" />
+-      <workItem from="1635004959811" duration="3169000" />
++      <workItem from="1635004959811" duration="3191000" />
++      <workItem from="1635088037737" duration="890000" />
+     </task>
+     <task id="LOCAL-00001" summary="test commit">
+       <created>1632765614613</created>
+@@ -291,7 +313,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1635008155048</updated>
+     </task>
+-    <option name="localTasksCounter" value="12" />
++    <task id="LOCAL-00012" summary="Account with default Controller Configuration">
++      <created>1635008163043</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1635008163043</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
