@@ -27,4 +27,5 @@ public class Account {
     @Column(name = "account_type")
     @Enumerated(EnumType.STRING)
     private Type type;
+    private Long balance;
 }
