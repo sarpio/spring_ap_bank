@@ -1,6 +1,6 @@
 #Now port is generated randomly. Further communication through gateway only!
 server:
-  port: 0
+  port: 8200
 
 spring:
   datasource:

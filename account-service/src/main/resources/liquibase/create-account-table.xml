@@ -14,7 +14,6 @@
             <column name="customer_id" type="binary(16)"/>
             <column name="isForeign" type="varchar(10)"/>
             <column name="type" type="varchar(10)"/>
-
         </createTable>
 
     </changeSet>

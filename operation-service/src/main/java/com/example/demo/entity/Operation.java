@@ -35,5 +35,5 @@ public class Operation {
 }
 
 enum Type {
-    CREDIT, TRANSACTION
+    EXPENSE, INCOME
 }

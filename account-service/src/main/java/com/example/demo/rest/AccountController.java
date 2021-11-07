@@ -28,9 +28,8 @@ public class AccountController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<AccountDTO> createAccount(@Validated @RequestBody AccountDTO dto) {
-        AccountDTO account = accountServices.createAccount(dto);
-        return ResponseEntity.ok(account);
+    public ResponseEntity<String> createAccount(@Validated @RequestBody AccountDTO dto) {
+        return ResponseEntity.ok(accountServices.createAccount(dto));
     }
 
     @DeleteMapping

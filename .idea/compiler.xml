@@ -11,6 +11,7 @@
         <module name="operation-service" />
         <module name="config-server" />
         <module name="account-service" />
+        <module name="customer-service" />
         <module name="gateway-service" />
       </profile>
     </annotationProcessing>
