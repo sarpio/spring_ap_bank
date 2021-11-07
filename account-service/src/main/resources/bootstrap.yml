@@ -1,6 +1,5 @@
 server:
   port: 8100
-
 spring:
   datasource:
     url: jdbc:mysql://piotrsarnecki.com:3306/sarpio_account

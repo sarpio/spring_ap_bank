@@ -42,7 +42,8 @@ public class AccountServices {
     }
 
     public String deleteAccountById(UUID id) {
-        if (accountRepository.findById(id).isPresent()) {
+        boolean present = accountRepository.findById(id).isPresent();
+        if (present) {
             accountRepository.deleteById(id);
             return "Account removed";
         } else {

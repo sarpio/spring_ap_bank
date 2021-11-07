@@ -8,12 +8,10 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Table(name = "account")
-@Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
 @Builder
-@ToString
+@NoArgsConstructor
 public class Account {
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -25,7 +23,7 @@ public class Account {
     @Column(name = "customer_Id")
     private UUID customerId;
     @Column(name = "is_Foreign")
-    private boolean isForeign;
+    private Boolean isForeign;
     @Column(name = "account_type")
     @Enumerated(EnumType.STRING)
     private Type type;
