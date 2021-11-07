@@ -1,0 +1,3 @@
+spring:
+test: testing value to check configuration is workin
+info: dummy content has to be removed
