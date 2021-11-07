@@ -33,7 +33,7 @@ public class AccountController {
     }
 
     @DeleteMapping
-    public ResponseEntity<String> deleteAccountById(UUID id) {
+    public ResponseEntity<String> deleteAccountById(@RequestParam("id") UUID id) {
         String response = accountServices.deleteAccountById(id);
         return ResponseEntity.ok(response);
     }
