@@ -2,7 +2,6 @@ package com.example.demo.entity;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -20,7 +19,7 @@ public class Account {
     @Column(columnDefinition = "BINARY(16)")
     private UUID id;
 
-    @Column(name = "account_number") //generate auto ?
+    @Column(name = "account_number")
     private String accountNumber;
 
     @Column(name = "customer_Id")
@@ -33,5 +32,5 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private Type type;
 
-    private Long balance;
+    private Double balance;
 }

@@ -1,3 +1,8 @@
-spring:
-test: testing value to check configuration is workin
-info: dummy content has to be removed
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

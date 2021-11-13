@@ -50,9 +50,4 @@ public class AccountServices {
             return new ResponseStatusException(HttpStatus.NOT_FOUND).toString();
         }
     }
-
-    private String accountNumberGenerator() {
-        Random random = new Random();
-        return String.format("%09d", random.nextInt(1000000000));
-    }
 }
