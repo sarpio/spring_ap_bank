@@ -1,10 +1,12 @@
 package com.example.demo.rest.dto;
 
-import com.example.demo.entity.Type;
+import com.example.demo.entity.Currency;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
+import org.hibernate.annotations.Type;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Random;
 import java.util.UUID;
@@ -14,20 +16,18 @@ import java.util.UUID;
 public class AccountDTO {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private UUID id;
+    private Long id;
     private String accountNumber;
 
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private UUID customerId;
+    private Long customerId;
+    @Value("false")
     private boolean isForeign;
-    private Type type;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Currency currency;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long balance;
 
-    public UUID getCustomerId() {
-        return UUID.randomUUID();
-    }
 
     public String getAccountNumber() {
         Random random = new Random();

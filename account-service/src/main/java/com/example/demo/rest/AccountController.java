@@ -1,5 +1,6 @@
 package com.example.demo.rest;
 
+import com.example.demo.entity.Currency;
 import com.example.demo.rest.dto.AccountDTO;
 import com.example.demo.services.AccountServices;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/account")
+@RequestMapping("/api/account/")
 public class AccountController {
 
     private final AccountServices accountServices;
@@ -22,18 +23,24 @@ public class AccountController {
         return ResponseEntity.ok(accountServices.findAllAccounts());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<AccountDTO> getAccountById(@PathVariable UUID id) {
+    @GetMapping("{id}")
+    public ResponseEntity<AccountDTO> getAccountById(@PathVariable Long id) {
         return ResponseEntity.ok(accountServices.findAccountById(id));
     }
 
-    @PostMapping("/")
-    public ResponseEntity<String> createAccount(@Validated @RequestBody AccountDTO dto) {
-        return ResponseEntity.ok(accountServices.createAccount(dto));
+    @GetMapping("/customer/{customerId}")
+    public ResponseEntity<AccountDTO>getAccountByCustomerId(@PathVariable Long customerId) {
+        return ResponseEntity.ok(accountServices.findByCustomerId(customerId));
+    }
+
+    @PostMapping
+    public ResponseEntity<String> createAccount(@Validated @RequestBody AccountDTO dto,
+                                                @Validated @RequestParam Currency currency) {
+        return ResponseEntity.ok(accountServices.createAccount(dto, currency));
     }
 
     @DeleteMapping
-    public ResponseEntity<String> deleteAccountById(@RequestParam("id") UUID id) {
+    public ResponseEntity<String> deleteAccountById(@RequestParam("id") Long id) {
         String response = accountServices.deleteAccountById(id);
         return ResponseEntity.ok(response);
     }

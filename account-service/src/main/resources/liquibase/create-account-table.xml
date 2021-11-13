@@ -5,11 +5,11 @@
    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <changeSet author="Anatolii" id="create-account-table">
         <createTable tableName="account">
-            <column name="id" type="binary(16)">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
             <column name="account_number" type="varchar(250)"/>
-            <column name="customer_id" type="binary(16)"/>
+            <column name="customer_id" type="bigint"/>
             <column name="isForeign" type="boolean"/>
             <column name="type" type="varchar(10)"/>
             <column name="balance" type="bigint"/>
