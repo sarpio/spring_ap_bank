@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
         <module name="operation-service" />
-        <module name="config-server" />
+        <module name="config-service" />
         <module name="account-service" />
         <module name="customer-service" />
         <module name="gateway-service" />
@@ -17,7 +17,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account-service" target="11" />
-      <module name="config-server" target="11" />
       <module name="config-service" target="11" />
       <module name="config-service (1)" target="11" />
       <module name="customer-service" target="11" />
@@ -36,7 +35,6 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="account-service" options="-parameters" />
-      <module name="config-server" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="config-service (1)" options="-parameters" />
       <module name="customer-service" options="-parameters" />
