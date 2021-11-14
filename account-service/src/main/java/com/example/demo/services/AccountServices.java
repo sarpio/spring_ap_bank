@@ -52,8 +52,8 @@ public class AccountServices {
         }
     }
 
-    public AccountDTO findByCustomerId(Long customerId) {
-        Account account = accountRepository.findByCustomerId(customerId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        return EntityDtoMapper.map(account);
+    public List<AccountDTO> findByCustomerId(Long customerId) {
+        List<Account> accounts = accountRepository.findByCustomerId(customerId);
+        return accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
     }
 }

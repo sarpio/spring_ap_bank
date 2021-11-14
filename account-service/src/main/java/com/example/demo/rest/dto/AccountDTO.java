@@ -35,7 +35,6 @@ public class AccountDTO {
         for (int i = 0; i < 5; i++) {
             accountNumber = accountNumber + "-" + String.format("%04d", random.nextInt(10000));
         }
-//        return String.format("%04d", random.nextInt(10000));
         return accountNumber;
     }
 }

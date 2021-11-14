@@ -1,0 +1,10 @@
+td, th {
+  padding: 5px 10px;
+  margin: 5px;
+  text-align: end;
+  color: #424444;
+}
+
+th {
+  color: black;
+}

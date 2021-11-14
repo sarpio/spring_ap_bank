@@ -2,10 +2,7 @@ server:
   port: 8100
 spring:
   datasource:
-#    url: jdbc:mysql://piotrsarnecki.com:3306/sarpio_account
     url: jdbc:mysql://localhost:3306/sarpio_account
-#    username: sarpio_account
-#    password: Account1!
     username: root
     password: password
   cloud:
@@ -13,7 +10,6 @@ spring:
       uri: http://localhost:8888
   application:
     name: account-service
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,4 +18,3 @@ spring:
     database-platform: "org.hibernate.dialect.MySQL8Dialect"
   liquibase:
     change-log: 'classpath:liquibase/liquibase-changeLog.xml'
-

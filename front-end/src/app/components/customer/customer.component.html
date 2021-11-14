@@ -1,0 +1,16 @@
+<hr>
+<h1>{{title}}</h1>
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Owner</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+  </tr>
+  </tbody>
+</table>
