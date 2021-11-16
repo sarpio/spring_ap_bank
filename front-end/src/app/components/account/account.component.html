@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+<hr>
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Owner name</th>
+    <th>Account number</th>
+    <th>Currency</th>
+    <th>balance</th>
+    <th>Origin</th>
+  </tr>
+  </thead>
+      <tbody>
+    <tr *ngFor="let a of accounts">
+      <td>{{a.id}}</td>
+      <td>{{a}}</td>
+      <td>{{a.accountNumber}}</td>
+      <td>{{a.currency}}</td>
+      <!--    <td>{{a.customers}}</td>-->
+      <td>{{a.foreign}}</td>
+    </tr>
+    </tbody>
+</table>

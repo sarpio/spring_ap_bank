@@ -4,4 +4,21 @@
   align-items: center;
   margin: auto;
 }
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.item-menu {
+  margin: 0px 20px;
+}
 
+.menu-bar {
+  margin: 0;
+  padding: 10px;
+  background-color: steelblue;
+  width: 100vw;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: lightgray;
+}

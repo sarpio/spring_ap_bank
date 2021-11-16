@@ -9,11 +9,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/account/")
+@CrossOrigin("*")
 public class AccountController {
 
     private final AccountServices accountServices;

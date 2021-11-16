@@ -1,15 +1,12 @@
 package com.example.demo.rest.dto;
 
 import com.example.demo.entity.Currency;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.Type;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Random;
-import java.util.UUID;
 
 @Data
 @Builder

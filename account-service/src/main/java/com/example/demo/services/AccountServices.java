@@ -20,11 +20,15 @@ public class AccountServices {
     private final AccountRepository accountRepository;
 
     public List<AccountDTO> findAllAccounts() {
-        return accountRepository
+        List<AccountDTO> accountsDTO = accountRepository
                 .findAll()
                 .stream()
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
+        for (AccountDTO dto : accountsDTO) {
+
+        }
+        return accountsDTO;
     }
 
     public AccountDTO findAccountById(Long id) {

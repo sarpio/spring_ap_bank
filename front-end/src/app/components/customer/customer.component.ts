@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from "../../services/customer.service";
 import {Customer} from "../../model/customer";
+import {Account} from "../../model/account";
 
 @Component({
   selector: 'app-customer',
@@ -12,14 +13,14 @@ export class CustomerComponent implements OnInit {
   title = "Customer Module"
 
   customers: Customer[] = [];
+  accounts: Account[] = [];
 
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    this.customerService.getAllCustomers().subscribe((data: any[])=> {
+    this.customerService.getAllCustomers().subscribe((data: Customer[])=> {
       console.log(data)
       this.customers = data;
     })
   }
-
 }
