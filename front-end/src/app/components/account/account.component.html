@@ -2,23 +2,26 @@
 <hr>
 <table>
   <thead>
-  <tr>
-    <th>#</th>
-    <th>Owner name</th>
-    <th>Account number</th>
-    <th>Currency</th>
-    <th>balance</th>
-    <th>Origin</th>
-  </tr>
+    <tr>
+      <th>#</th>
+      <th>Owner name</th>
+      <th>Account number</th>
+      <th>Currency</th>
+      <th>balance</th>
+      <th>Origin</th>
+    </tr>
   </thead>
-      <tbody>
+  <tbody>
     <tr *ngFor="let a of accounts">
       <td>{{a.id}}</td>
-      <td>{{a}}</td>
+      <td>
+      </td>
       <td>{{a.accountNumber}}</td>
       <td>{{a.currency}}</td>
-      <!--    <td>{{a.customers}}</td>-->
+      <td>{{a.balance}}</td>
       <td>{{a.foreign}}</td>
     </tr>
-    </tbody>
+  </tbody>
 </table>
+<hr>
+

@@ -1,5 +1,44 @@
 <h1>{{title}}</h1>
 <hr>
-<ul *ngFor="let c of customers">
-  <li>{{c.id}} {{ c.name }}</li>
-</ul>
+<!--<ul *ngFor="let c of customers">-->
+<!--  <li>{{c.id}} {{ c.name }} </li>-->
+<!--</ul>-->
+
+<div *ngFor="let c of customers">
+  {{c.name}}
+  <div *ngFor="let a of c.accounts">
+    {{a.accountNumber}}
+  </div>
+</div>
+
+
+<table>
+  <thead>
+  <th>#</th>
+  <th>Customer Name</th>
+  <th>Account Number</th>
+  <th>Currency</th>
+  <th>Balanse</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>
+      <div *ngFor="let account of customer.accounts">
+        {{account.accountNumber}}
+      </div>
+    </td>
+    <td>
+      <div *ngFor="let account of customer.accounts">
+        {{account.currency}}
+      </div>
+    </td>
+    <td>
+      <div *ngFor="let account of customer.accounts">
+        {{account.balance}}
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

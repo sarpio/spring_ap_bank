@@ -12,7 +12,7 @@
             <column name="customer_id" type="bigint"/>
             <column name="isForeign" type="boolean"/>
             <column name="type" type="varchar(10)"/>
-            <column name="balance" type="bigint"/>
+            <column name="balance" type="double(10.2)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

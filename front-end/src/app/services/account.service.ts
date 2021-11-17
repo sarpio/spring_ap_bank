@@ -14,7 +14,6 @@ export class AccountService {
 
   public getAllAccounts():Observable<Account[]> {
     return  this.http.get<Account[]>(this.accountUrl);
+
   }
-
-
 }

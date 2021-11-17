@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration" />
+    <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/create-account-table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/create-account-table.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/components/customer/customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/components/customer/customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/model/account.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/model/account.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/services/account.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/services/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/services/customer.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +31,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="account_controller_basic_config" />
+        <entry key="$PROJECT_DIR$" value="14.11.2021" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -234,17 +251,17 @@
       <item itemvalue="JavaScript Debug.Angular Application (front-end)" />
       <item itemvalue="JUnit.All in customer-service" />
       <item itemvalue="npm.Angular CLI Server (front-end)" />
-      <item itemvalue="Spring Boot.AccountServiceApplication" />
       <item itemvalue="Spring Boot.ConfigServiceApplication" />
       <item itemvalue="Spring Boot.EurekaApplication" />
+      <item itemvalue="Spring Boot.AccountServiceApplication" />
       <item itemvalue="Spring Boot.CustomerServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CustomerServiceApplication" />
         <item itemvalue="Spring Boot.AccountServiceApplication" />
-        <item itemvalue="Spring Boot.EurekaApplication" />
+        <item itemvalue="Spring Boot.CustomerServiceApplication" />
         <item itemvalue="Spring Boot.ConfigServiceApplication" />
+        <item itemvalue="Spring Boot.EurekaApplication" />
         <item itemvalue="JUnit.All in customer-service" />
       </list>
     </recent_temporary>
@@ -273,7 +290,9 @@
       <workItem from="1636881084223" duration="15872000" />
       <workItem from="1636915350185" duration="1156000" />
       <workItem from="1636963582679" duration="5411000" />
-      <workItem from="1636980840414" duration="11929000" />
+      <workItem from="1636980840414" duration="12203000" />
+      <workItem from="1637079803799" duration="7202000" />
+      <workItem from="1637137991872" duration="14042000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -485,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637079341629</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Account with default Controller Configuration">
+      <created>1637079523401</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1637079523401</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

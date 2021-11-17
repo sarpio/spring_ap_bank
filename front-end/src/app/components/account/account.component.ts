@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Account} from "../../model/account";
-import {Customer} from "../../model/customer";
 import {AccountService} from "../../services/account.service";
 import {CustomerService} from "../../services/customer.service";
 
@@ -11,7 +10,6 @@ import {CustomerService} from "../../services/customer.service";
 })
 export class AccountComponent implements OnInit {
   title = 'Accounts Module';
-  customer: Customer = {accounts: [], id: 0, name: ""};
   accounts: Account[] = [];
 
   constructor(private accountService: AccountService, private customerService: CustomerService) {
@@ -23,12 +21,18 @@ export class AccountComponent implements OnInit {
 
   fetchAccounts() {
     this.accountService.getAllAccounts().subscribe((data: Account[]) => {
-      console.log(data);
       this.accounts = data;
+      // console.log(this.accounts);
+        const accountsArray: any[] = Array.of(data);
+        console.log(accountsArray)
     }, error => {
       console.log(error)
     });
   }
 
-
+  fetchCustomerById(id: number) {
+    return this.customerService.getCustomerById(id);
+  }
 }
+
+

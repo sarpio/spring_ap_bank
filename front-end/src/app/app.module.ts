@@ -12,6 +12,7 @@ import { AccountComponent } from './components/account/account.component';
     AppComponent,
     CustomerComponent,
     AccountComponent
+
   ],
   imports: [
     BrowserModule,
