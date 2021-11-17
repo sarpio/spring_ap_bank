@@ -23,7 +23,7 @@ public class AccountDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Currency currency;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private Long balance;
+    private Double balance;
 
 
     public String getAccountNumber() {

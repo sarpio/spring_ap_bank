@@ -12,8 +12,9 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllAccounts():Observable<Account[]> {
-    return  this.http.get<Account[]>(this.accountUrl);
+  public getAllAccounts():Observable<any[]> {
+    return  this.http.get<any[]>(this.accountUrl);
 
   }
 }
+
