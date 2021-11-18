@@ -41,13 +41,16 @@ public class AccountServices {
                 );
     }
 
-    public String createAccount(AccountDTO dto, Currency currency) {
+    public AccountDTO createAccount(AccountDTO dto, Currency currency) {
         dto.setCurrency(currency);
         dto.setAccountNumber(setAccountNumber());
+        if (isNumberExists(dto.getAccountNumber())) {
+            dto.setAccountNumber(setAccountNumber());
+        }
         Account entity = EntityDtoMapper.map(dto);
         entity.setBalance(0.0);
         accountRepository.save(entity);
-        return "Account created for user: " + dto.getCustomerId();
+        return EntityDtoMapper.map(entity);
     }
 
     public String deleteAccountById(Long id) {
@@ -72,5 +75,13 @@ public class AccountServices {
             accountNumber = accountNumber + "-" + String.format("%04d", random.nextInt(10000));
         }
         return accountNumber;
+    }
+
+    private boolean isNumberExists(String number) {
+        Boolean byAccountNumber = accountRepository.findByAccountNumber(number);
+        if (byAccountNumber != null) {
+            return true;
+        }
+        return false;
     }
 }

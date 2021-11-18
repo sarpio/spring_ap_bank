@@ -11,6 +11,7 @@ import {CustomerService} from "../../services/customer.service";
 export class AccountComponent implements OnInit {
   title = 'Accounts Module';
   accounts: Account[] = [];
+  customer: any;
 
   constructor(private accountService: AccountService, private customerService: CustomerService) {
   }

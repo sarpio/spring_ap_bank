@@ -1,25 +1,29 @@
 <h1>{{title}}</h1>
 <hr>
-<table>
+<table class="table">
   <thead>
-    <tr>
-      <th>#</th>
-      <th>Owner name</th>
-      <th>Account number</th>
-      <th>Currency</th>
-
-      <th>Origin</th>
-    </tr>
+  <tr>
+    <th>#</th>
+    <th>Owner name</th>
+    <th>Account number</th>
+    <th>Currency</th>
+    <th>Origin</th>
+    <th>Balance</th>
+  </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let a of accounts">
-      <td>{{a.id}}</td>
-      <td>
-      </td>
-      <td>{{a.accountNumber}}</td>
-      <td>{{a.balance}} {{a.currency}}</td>
-      <td>{{a.foreign}}</td>
-    </tr>
+  <tr *ngFor="let account of accounts">
+    <td>{{account.id}}</td>
+    <td>
+<!--      {{account.customer.name}}-->
+<!--      <div *ngFor="let customer of account.customer">-->
+<!--        {{customer.name}}-->
+<!--      </div>-->
+    </td>
+    <td>{{account.accountNumber}}</td>
+    <td>{{account.balance}} {{account.currency}}</td>
+    <td>{{account.foreign}}</td>
+  </tr>
   </tbody>
 </table>
 <hr>
