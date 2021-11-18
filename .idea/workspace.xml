@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration/account-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/account-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,9 +251,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.AccountServiceApplication" />
+        <item itemvalue="Spring Boot.ConfigServiceApplication" />
         <item itemvalue="Spring Boot.CustomerServiceApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
-        <item itemvalue="Spring Boot.ConfigServiceApplication" />
         <item itemvalue="JUnit.All in customer-service" />
       </list>
     </recent_temporary>
@@ -285,7 +285,7 @@
       <workItem from="1636980840414" duration="12203000" />
       <workItem from="1637079803799" duration="7202000" />
       <workItem from="1637137991872" duration="25164000" />
-      <workItem from="1637221750703" duration="11896000" />
+      <workItem from="1637221750703" duration="12293000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -539,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637247832753</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Account with default Controller Configuration">
+      <created>1637248847852</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1637248847852</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

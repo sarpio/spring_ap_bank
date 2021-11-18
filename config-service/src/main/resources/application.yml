@@ -8,6 +8,6 @@ spring:
         git:
           uri: https://github.com/sarpio/spring_ap_bank.git
           search-paths: configuration
-          clone-on-start: true
-        native:
-          search-locations:
+#          clone-on-start: true
+#        native:
+#          search-locations:
