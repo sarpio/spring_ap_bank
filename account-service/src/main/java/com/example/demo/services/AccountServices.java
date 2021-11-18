@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -42,7 +43,10 @@ public class AccountServices {
 
     public String createAccount(AccountDTO dto, Currency currency) {
         dto.setCurrency(currency);
-        accountRepository.save(EntityDtoMapper.map(dto));
+        dto.setAccountNumber(setAccountNumber());
+        Account entity = EntityDtoMapper.map(dto);
+        entity.setBalance(0.0);
+        accountRepository.save(entity);
         return "Account created for user: " + dto.getCustomerId();
     }
 
@@ -59,5 +63,14 @@ public class AccountServices {
     public List<AccountDTO> findByCustomerId(Long customerId) {
         List<Account> accounts = accountRepository.findByCustomerId(customerId);
         return accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
+    }
+
+    public String setAccountNumber() {
+        Random random = new Random();
+        String accountNumber = String.format("%02d", random.nextInt(100));
+        for (int i = 0; i < 5; i++) {
+            accountNumber = accountNumber + "-" + String.format("%04d", random.nextInt(10000));
+        }
+        return accountNumber;
     }
 }

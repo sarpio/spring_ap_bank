@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import javax.ws.rs.DefaultValue;
 
 @Table(name = "account")
 @Data
@@ -25,13 +26,13 @@ public class Account {
     @Column(name = "customer_id")
     private Long customerId;
 
-    @Column(name = "is_Foreign")
     @Value("false")
-    private Boolean isForeign;
+    @Column(name = "is_Foreign")
+    private Integer isForeign;
 
-    @Column(name = "account_type")
+    @Column(name = "currency")
     @Enumerated(EnumType.STRING)
     private Currency currency;
-
     private Double balance;
+
 }

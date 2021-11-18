@@ -10,8 +10,8 @@
             </column>
             <column name="account_number" type="varchar(250)"/>
             <column name="customer_id" type="bigint"/>
-            <column name="isForeign" type="boolean"/>
-            <column name="type" type="varchar(10)"/>
+            <column name="is_foreign" type="int"/>
+            <column name="currency" type="varchar(10)"/>
             <column name="balance" type="double(10.2)"/>
         </createTable>
     </changeSet>

@@ -1,44 +1,38 @@
-<h1>{{title}}</h1>
-<hr>
-<!--<ul *ngFor="let c of customers">-->
-<!--  <li>{{c.id}} {{ c.name }} </li>-->
-<!--</ul>-->
-
-<div *ngFor="let c of customers">
-  {{c.name}}
-  <div *ngFor="let a of c.accounts">
-    {{a.accountNumber}}
-  </div>
+<div class="title justify-content-center">
+  <h1>{{title}}</h1>
 </div>
-
-
-<table>
-  <thead>
-  <th>#</th>
-  <th>Customer Name</th>
-  <th>Account Number</th>
-  <th>Currency</th>
-  <th>Balanse</th>
+&nbsp;
+&nbsp;<div class="container justify-content-center col-8">
+<table class="table table-striped">
+  <thead class="table-dark">
+  <tr>
+    <th>#</th>
+    <th>Customer Name</th>
+    <th class="t-center">Accout numbers</th>
+    <th>Account balance</th>
+    <th>is Foreign Account</th>
+  </tr>
   </thead>
   <tbody>
   <tr *ngFor="let customer of customers">
-    <td>{{customer.id}}</td>
-    <td>{{customer.name}}</td>
+    <td class="t-top">{{customer.id}}</td>
+    <td class="t-top t-center">{{customer.name}}</td>
     <td>
       <div *ngFor="let account of customer.accounts">
         {{account.accountNumber}}
       </div>
     </td>
     <td>
-      <div *ngFor="let account of customer.accounts">
-        {{account.currency}}
+      <div *ngFor="let account of customer.accounts" class="t-right">
+        {{account.balance | number: '1.2'}} {{account.currency}}
       </div>
     </td>
     <td>
-      <div *ngFor="let account of customer.accounts">
-        {{account.balance}}
+      <div *ngFor="let account of customer.accounts" class="t-right">
+        {{account.foreign | yesNo}}
       </div>
     </td>
   </tr>
   </tbody>
 </table>
+</div>

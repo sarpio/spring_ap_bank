@@ -1,9 +1,3 @@
-.container-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-}
 .row {
   display: flex;
   flex-direction: row;
