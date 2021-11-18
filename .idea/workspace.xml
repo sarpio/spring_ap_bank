@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/repo/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/repo/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/components/account/account.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/account-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/account-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +285,7 @@
       <workItem from="1636980840414" duration="12203000" />
       <workItem from="1637079803799" duration="7202000" />
       <workItem from="1637137991872" duration="25164000" />
-      <workItem from="1637221750703" duration="10799000" />
+      <workItem from="1637221750703" duration="11896000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -534,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637235259353</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Account with default Controller Configuration">
+      <created>1637247832753</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1637247832753</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,27 +576,6 @@
     <MESSAGE value="Added mysql support" />
     <MESSAGE value="Account with default Controller Configuration" />
     <option name="LAST_COMMIT_MESSAGE" value="Account with default Controller Configuration" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

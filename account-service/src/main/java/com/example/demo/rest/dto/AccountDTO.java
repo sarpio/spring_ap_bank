@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Random;
 
 @Data
@@ -15,10 +18,14 @@ public class AccountDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
     private String accountNumber;
+    @NotNull
+    @Min(1)
     private Long customerId;
-    @Value("false")
+    @Min(0)
+    @Max(1)
+    @NotNull
     private Integer isForeign;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+//    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Currency currency;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Double balance;
