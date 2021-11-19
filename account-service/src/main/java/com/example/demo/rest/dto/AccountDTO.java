@@ -9,15 +9,17 @@ import org.springframework.beans.factory.annotation.Value;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Random;
 
 @Data
 @Builder
 public class AccountDTO {
 
-//    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
-    private String accountNumber;
+    @Min(1000)@Max(9999)
+    private Long accountNumber;
     @NotNull
     @Min(1)
     private Long customerId;

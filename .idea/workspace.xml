@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_5_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/entity/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/repo/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/repo/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/create-account-table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/create-account-table.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/account-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/account-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/customer-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/customer-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration/operation-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/operation-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/customer/create/add-customer/add-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/components/customer/create/add-customer/add-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/create-operation-table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/create-operation-table.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +153,17 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in customer-service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer-service" />
       <option name="PACKAGE_NAME" value="" />
@@ -244,8 +269,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CustomerServiceApplication" />
         <item itemvalue="Spring Boot.AccountServiceApplication" />
+        <item itemvalue="Spring Boot.CustomerServiceApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
         <item itemvalue="Spring Boot.ConfigServiceApplication" />
         <item itemvalue="JUnit.All in customer-service" />
@@ -281,7 +306,7 @@
       <workItem from="1637137991872" duration="25164000" />
       <workItem from="1637221750703" duration="18535000" />
       <workItem from="1637263328354" duration="917000" />
-      <workItem from="1637304893442" duration="435000" />
+      <workItem from="1637304893442" duration="6753000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -556,7 +581,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637305069999</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Account with default Controller Configuration">
+      <created>1637305381129</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1637305381129</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Account with default Controller Configuration">
+      <created>1637305428112</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1637305428112</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -12,5 +12,5 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     List<Account> findByCustomerId(Long id);
 
     @Query(value = "select * from account a where a.account_number =?1", nativeQuery = true)
-    Account findByAccountNumber(String number);
+    Account findByAccountNumber(Long number);
 }

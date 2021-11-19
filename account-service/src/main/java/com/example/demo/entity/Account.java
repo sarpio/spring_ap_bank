@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import javax.ws.rs.DefaultValue;
 
 @Table(name = "account")
@@ -20,8 +23,9 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Min(1000)@Max(9999)
     @Column(name = "account_number")
-    private String accountNumber;
+    private Long accountNumber;
 
     @Column(name = "customer_id")
     private Long customerId;

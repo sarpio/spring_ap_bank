@@ -8,11 +8,11 @@
             <column name="id" type="binary(16)">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="account_number" type="bigint"/>
+            <column name="account_id" type="bigint"/>
             <column name="foreign_account" type="bigint"/>
             <column name="transaction_data" type="date"/>
             <column name="value" type="double"/>
-            <column name="type" type="varchar(10)"/>
+            <column name="operation_type" type="varchar(10)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

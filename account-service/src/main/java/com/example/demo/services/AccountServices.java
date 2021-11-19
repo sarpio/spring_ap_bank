@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -40,9 +39,9 @@ public class AccountServices {
 
     public AccountDTO createAccount(AccountDTO dto, Currency currency) {
         dto.setCurrency(currency);
-       if (isNumberExists(dto.getAccountNumber())) {
+       if (isNumberExists(dto.getAccountNumber()) || dto.getAccountNumber() == null) {
            dto.setAccountNumber(setAccountNumber());
-           System.err.println("Detected duplicated number. Account number generated automatically");
+           System.err.println("Detected duplicated number or number is missing. Account number generated automatically");
        }
         Account entity = EntityDtoMapper.map(dto);
         entity.setBalance(0.0);
@@ -65,16 +64,11 @@ public class AccountServices {
         return accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
     }
 
-    public String setAccountNumber() {
-        Random random = new Random();
-        String accountNumber = String.format("%02d", random.nextInt(100));
-        for (int i = 0; i < 5; i++) {
-            accountNumber = accountNumber + "-" + String.format("%04d", random.nextInt(10000));
-        }
-        return accountNumber;
+    public Long setAccountNumber() {
+        return (long) ((Math.random() * (9999 - 1000)) + 1000);
     }
 
-    private boolean isNumberExists(String number) {
+    private boolean isNumberExists(Long number) {
         Account byAccountNumber = accountRepository.findByAccountNumber(number);
         if (byAccountNumber != null) {
             return true;

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -34,8 +35,8 @@ public class AccountController {
     }
 
     @PostMapping
-    public ResponseEntity<AccountDTO> createAccount(@Validated @RequestBody AccountDTO dto,
-                                                @Validated @RequestParam Currency currency) {
+    public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO dto,
+                                                @Valid @RequestParam Currency currency) {
         return ResponseEntity.ok(accountServices.createAccount(dto, currency));
     }
 
