@@ -1,6 +1,10 @@
 server:
   port: 8888
 spring:
+  application:
+    name: config-server
+  profiles:
+    active: git
   cloud:
     config:
       server:
@@ -8,6 +12,9 @@ spring:
         git:
           uri: https://github.com/sarpio/spring_ap_bank.git
           search-paths: configuration
-#          clone-on-start: true
-#        native:
-#          search-locations:
+          clone-on-start: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

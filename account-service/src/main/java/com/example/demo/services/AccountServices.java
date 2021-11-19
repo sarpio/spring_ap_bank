@@ -26,9 +26,6 @@ public class AccountServices {
                 .stream()
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
-        for (AccountDTO dto : accountsDTO) {
-
-        }
         return accountsDTO;
     }
 
@@ -43,10 +40,10 @@ public class AccountServices {
 
     public AccountDTO createAccount(AccountDTO dto, Currency currency) {
         dto.setCurrency(currency);
-        dto.setAccountNumber(setAccountNumber());
-        if (isNumberExists(dto.getAccountNumber())) {
-            dto.setAccountNumber(setAccountNumber());
-        }
+       if (isNumberExists(dto.getAccountNumber())) {
+           dto.setAccountNumber(setAccountNumber());
+           System.err.println("Detected duplicated number. Account number generated automatically");
+       }
         Account entity = EntityDtoMapper.map(dto);
         entity.setBalance(0.0);
         accountRepository.save(entity);
@@ -78,7 +75,7 @@ public class AccountServices {
     }
 
     private boolean isNumberExists(String number) {
-        Boolean byAccountNumber = accountRepository.findByAccountNumber(number);
+        Account byAccountNumber = accountRepository.findByAccountNumber(number);
         if (byAccountNumber != null) {
             return true;
         }

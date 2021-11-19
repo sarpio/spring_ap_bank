@@ -15,7 +15,7 @@ import java.util.Random;
 @Builder
 public class AccountDTO {
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+//    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
     private String accountNumber;
     @NotNull

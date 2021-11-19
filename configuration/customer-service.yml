@@ -1,10 +1,10 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/sarpio_account
+    url: jdbc:mysql://localhost:3306/sarpio_customer
     username: root
     password: password
   application:
-    name: account-service
+    name: customer-service
   jpa:
     hibernate:
       ddl-auto: update
