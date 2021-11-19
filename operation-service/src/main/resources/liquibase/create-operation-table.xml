@@ -5,14 +5,14 @@
    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <changeSet author="Anatolii" id="create-operation-table">
         <createTable tableName="operation">
-            <column name="id" type="binary(16)">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
             <column name="account_id" type="bigint"/>
             <column name="foreign_account" type="bigint"/>
-            <column name="transaction_data" type="date"/>
+            <column name="transaction_date" type="date"/>
             <column name="value" type="double"/>
-            <column name="operation_type" type="varchar(10)"/>
+            <column name="type" type="varchar(10)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/entity/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/repo/OperationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/OperationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/dto/OperationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/util/EntityDtoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/operation-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/operation-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/AccountServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/AccountServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/entity/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/CustomerDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/entity/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/entity/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/repo/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/repo/OperationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/OperationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/dto/OperationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/dto/OperationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/create-operation-table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/create-operation-table.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/liquibase-changeLog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/liquibase-changeLog.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +127,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (front-end)">
+  <component name="RunManager" selected="Spring Boot.OperationServiceApplication">
     <configuration type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -299,7 +304,7 @@
       <workItem from="1637137991872" duration="25164000" />
       <workItem from="1637221750703" duration="18535000" />
       <workItem from="1637263328354" duration="917000" />
-      <workItem from="1637304893442" duration="9992000" />
+      <workItem from="1637304893442" duration="16235000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -595,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637313147608</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Account with default Controller Configuration">
+      <created>1637321837455</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1637321837455</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

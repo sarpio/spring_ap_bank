@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -15,6 +16,9 @@ public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "account_id")
+    private Long accountId;
 
     @Column(name = "foreign_account")
     private Long foreignAccount;

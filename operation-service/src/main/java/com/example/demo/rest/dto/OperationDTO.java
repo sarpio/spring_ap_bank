@@ -5,9 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,13 +14,19 @@ public class OperationDTO {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
+
+    @NotNull@NotEmpty@Positive
+    private Long accountId;
+
     @Min(1000)@Max(9999)
     private Long foreignAccount;
 
     @PastOrPresent
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private LocalDateTime transactionDate;
+
     @Min(1/10)
     private double value;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Type type;
 }
