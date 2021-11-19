@@ -26,7 +26,12 @@ public class OperationController {
 
     @GetMapping()
     public ResponseEntity<List<OperationDTO>> getAccountOperations(@Valid @RequestParam Long id) {
-        return ResponseEntity.ok(operationService.showAllAccountOperation(id));
+        return ResponseEntity.ok(operationService.getListOfTransactionByAccountId(id));
+    }
+
+    @DeleteMapping
+    public ResponseEntity<String> deleteOperationById(@Valid @RequestParam Long id) {
+        return ResponseEntity.ok(operationService.cancelOperationById(id));
     }
 
 }

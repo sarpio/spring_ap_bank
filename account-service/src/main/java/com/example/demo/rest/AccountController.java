@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
@@ -30,13 +31,13 @@ public class AccountController {
     }
 
     @GetMapping("/customer/{customerId}")
-    public ResponseEntity<List<AccountDTO>>getAccountByCustomerId(@PathVariable Long customerId) {
+    public ResponseEntity<List<AccountDTO>> getAccountByCustomerId(@PathVariable Long customerId) {
         return ResponseEntity.ok(accountServices.findByCustomerId(customerId));
     }
 
     @PostMapping
     public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO dto,
-                                                @Valid @RequestParam Currency currency) {
+                                                    @Valid @RequestParam Currency currency) {
         return ResponseEntity.ok(accountServices.createAccount(dto, currency));
     }
 
@@ -44,5 +45,10 @@ public class AccountController {
     public ResponseEntity<String> deleteAccountById(@RequestParam("id") Long id) {
         String response = accountServices.deleteAccountById(id);
         return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("{id}/{balance}")
+    public AccountDTO updateAccountBalance(@PathVariable("id") Long id, @PathVariable("balance") Double balance) {
+        return accountServices.updateBalanceByAccountId(id, balance);
     }
 }

@@ -39,10 +39,10 @@ public class AccountServices {
 
     public AccountDTO createAccount(AccountDTO dto, Currency currency) {
         dto.setCurrency(currency);
-       if (isNumberExists(dto.getAccountNumber()) || dto.getAccountNumber() == null) {
-           dto.setAccountNumber(setAccountNumber());
-           System.err.println("Detected duplicated number or number is missing. Account number generated automatically");
-       }
+        if (isNumberExists(dto.getAccountNumber()) || dto.getAccountNumber() == null) {
+            dto.setAccountNumber(setAccountNumber());
+            System.err.println("Detected duplicated number or number is missing. Account number generated automatically");
+        }
         Account entity = EntityDtoMapper.map(dto);
         entity.setBalance(0.0);
         accountRepository.save(entity);
@@ -74,5 +74,17 @@ public class AccountServices {
             return true;
         }
         return false;
+    }
+
+    public AccountDTO updateBalanceByAccountId(Long id, Double balance) {
+        if (accountRepository.existsById(id)) {
+            Account entity = accountRepository
+                    .findById(id)
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+            entity.setBalance(balance);
+            return EntityDtoMapper.map(accountRepository.save(entity));
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
+        }
     }
 }

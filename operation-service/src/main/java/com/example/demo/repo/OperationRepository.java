@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface OperationRepository extends JpaRepository<Operation, Long> {
 
-    List<Operation> findByForeignAccount(Long id);
+    List<Operation> findByAccountId(Long id);
 }

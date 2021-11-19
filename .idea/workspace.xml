@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/util/EntityDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/AccountWebService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/AccountServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/AccountServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/entity/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/CustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/entity/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/entity/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/repo/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/repo/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/repo/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/repo/OperationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/OperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/dto/OperationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/dto/OperationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/create-operation-table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/create-operation-table.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/liquibase-changeLog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/liquibase-changeLog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +113,7 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.demo.rest.dto" />
+      <recent name="com.example.demo.services" />
       <recent name="com.example.customerservice.rest.dto" />
     </key>
   </component>
@@ -304,7 +301,7 @@
       <workItem from="1637137991872" duration="25164000" />
       <workItem from="1637221750703" duration="18535000" />
       <workItem from="1637263328354" duration="917000" />
-      <workItem from="1637304893442" duration="16235000" />
+      <workItem from="1637304893442" duration="25494000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -607,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637321837455</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Account with default Controller Configuration">
+      <created>1637331283685</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1637331283685</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,6 +648,17 @@
     <MESSAGE value="Added mysql support" />
     <MESSAGE value="Account with default Controller Configuration" />
     <option name="LAST_COMMIT_MESSAGE" value="Account with default Controller Configuration" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
