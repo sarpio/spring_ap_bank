@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +27,7 @@ public class AccountServices {
                 .stream()
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
-        for (AccountDTO dto: accountsDTO             ) {
+        for (AccountDTO dto : accountsDTO) {
             dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
         }
         return accountsDTO;
@@ -70,7 +69,11 @@ public class AccountServices {
 
     public List<AccountDTO> findByCustomerId(Long customerId) {
         List<Account> accounts = accountRepository.findByCustomerId(customerId);
-        return accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
+        List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
+        for (AccountDTO dto : accountDTOS) {
+            dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
+        }
+        return accountDTOS;
     }
 
     public Long setAccountNumber() {
