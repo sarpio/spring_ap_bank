@@ -4,11 +4,13 @@ import com.example.demo.entity.Account;
 import com.example.demo.entity.Currency;
 import com.example.demo.repo.AccountRepository;
 import com.example.demo.rest.dto.AccountDTO;
+import com.example.demo.rest.dto.OperationDTO;
 import com.example.demo.until.EntityDtoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,6 +20,7 @@ import java.util.stream.Collectors;
 public class AccountServices {
 
     private final AccountRepository accountRepository;
+    private final OperationWebService operationWebService;
 
     public List<AccountDTO> findAllAccounts() {
         List<AccountDTO> accountsDTO = accountRepository
@@ -29,12 +32,15 @@ public class AccountServices {
     }
 
     public AccountDTO findAccountById(Long id) {
-        return accountRepository
+        AccountDTO accountDTO = accountRepository
                 .findById(id)
                 .map(EntityDtoMapper::map)
                 .orElseThrow(
                         () -> new ResponseStatusException(HttpStatus.NOT_FOUND)
                 );
+        List<OperationDTO> operationDTOS = operationWebService.getAllCustomerAccountsByAccountId(id).blockFirst();
+        accountDTO.setOperations(operationDTOS);
+        return accountDTO;
     }
 
     public AccountDTO createAccount(AccountDTO dto, Currency currency) {

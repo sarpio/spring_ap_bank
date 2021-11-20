@@ -4,15 +4,16 @@ import com.example.demo.entity.Currency;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.Random;
+import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class AccountDTO {
 
@@ -29,5 +30,6 @@ public class AccountDTO {
     private Integer isForeign;
     private Currency currency;
     private Double balance;
+    private List<OperationDTO> operations;
 
 }

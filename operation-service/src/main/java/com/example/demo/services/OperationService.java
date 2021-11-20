@@ -32,13 +32,13 @@ public class OperationService {
     }
 
     public String cancelOperationById(Long id) {
-        Operation entity;
-        if (operationRepository.existsById(id)) {
-            operationRepository.deleteById(id);
-
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
+        Long accountId;
+        Operation operation = operationRepository
+                .findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        accountId = operation.getAccountId();
+        operationRepository.deleteById(id);
+        recalculateAccountBalance(accountId);
         return "Operation with id:" + id + " has been withdrawn";
     }
 

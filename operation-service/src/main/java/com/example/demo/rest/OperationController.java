@@ -24,13 +24,13 @@ public class OperationController {
     return ResponseEntity.ok(operationService.addNewOperation(dto, type));
     }
 
-    @GetMapping()
-    public ResponseEntity<List<OperationDTO>> getAccountOperations(@Valid @RequestParam Long id) {
+    @GetMapping("{id}")
+    public ResponseEntity<List<OperationDTO>> getAccountOperations(@Valid @PathVariable("id") Long id) {
         return ResponseEntity.ok(operationService.getListOfTransactionByAccountId(id));
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> deleteOperationById(@Valid @RequestParam Long id) {
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<String> deleteOperationById(@Valid @PathVariable("id") Long id) {
         return ResponseEntity.ok(operationService.cancelOperationById(id));
     }
 
