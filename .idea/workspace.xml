@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Account with default Controller Configuration">
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/OperationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/OperationWebService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/AccountDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/rest/dto/CustomerDTO.java" afterDir="false" />
+    <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Full Configured All Services: Account, Operation, Customer">
       <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/example/demo/services/AccountServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/rest/OperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +296,7 @@
       <workItem from="1637221750703" duration="18535000" />
       <workItem from="1637263328354" duration="917000" />
       <workItem from="1637304893442" duration="25625000" />
-      <workItem from="1637399950319" duration="15398000" />
+      <workItem from="1637399950319" duration="15738000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1632765614613</created>
@@ -628,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637410216510</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Full Configured All Services: Account, Operation, Customer">
+      <created>1637421780659</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1637421780659</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,7 +663,8 @@
     <MESSAGE value="Change Name Aureka to Eureka" />
     <MESSAGE value="Added mysql support" />
     <MESSAGE value="Account with default Controller Configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Account with default Controller Configuration" />
+    <MESSAGE value="Full Configured All Services: Account, Operation, Customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full Configured All Services: Account, Operation, Customer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -28,6 +28,9 @@ public class AccountServices {
                 .stream()
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
+        for (AccountDTO dto: accountsDTO             ) {
+            dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
+        }
         return accountsDTO;
     }
 
