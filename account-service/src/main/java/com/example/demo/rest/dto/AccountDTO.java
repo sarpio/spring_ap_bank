@@ -27,9 +27,7 @@ public class AccountDTO {
     @Max(1)
     @NotNull
     private Integer isForeign;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Currency currency;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Double balance;
 
 }

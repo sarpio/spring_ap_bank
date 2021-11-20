@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -46,17 +45,28 @@ public class OperationService {
     public List<OperationDTO> getListOfTransactionByAccountId(Long id) {
         List<Operation> accountOperationsList = operationRepository.findByAccountId(id);
         return accountOperationsList
-        .stream()
-        .map(EntityDtoMapper::map)
-        .collect(Collectors.toList());
+                .stream()
+                .map(EntityDtoMapper::map)
+                .collect(Collectors.toList());
     }
 
-    private void recalculateAccountBalance(Long id) {
+    private AccountDTO recalculateAccountBalance(Long id) {
         List<OperationDTO> operations = getListOfTransactionByAccountId(id);
         Double balance = operations.stream().mapToDouble(OperationDTO::getValue).sum();
-        AccountDTO block = accountWebService.getAccount(id).block();
-        block.setBalance(balance);
-        System.out.println(block);
+        AccountDTO account;
+        try {
+            account = accountWebService.getAccount(id).block();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        if (account != null) {
+            account.setBalance(balance);
+            /*WebClient PUT operation*/
+            return accountWebService.putAccount(account).block();
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
     }
+
 
 }

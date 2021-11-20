@@ -13,8 +13,8 @@ public class AccountWebService {
 
     @Autowired
     public AccountWebService(WebClient.Builder builder) {
-        this.webClient = builder.baseUrl("http://localhost:8100/api/account/").build();
-//        http://localhost:8100/api/account/10/-30
+        this.webClient = builder.baseUrl("http://localhost:8100/api/account/")
+                .build();
     }
 
     public Mono<AccountDTO> getAccount(Long id) {
@@ -25,10 +25,10 @@ public class AccountWebService {
                 .bodyToMono(AccountDTO.class);
     }
 
-    public Mono<AccountDTO> putAccount(Long id) {
-        return this.webClient
-                .post()
-                .uri("{id}", id)
+    public Mono<AccountDTO> putAccount(AccountDTO account) {
+        return this.webClient.put()
+                .uri("" + account.getId())
+                .bodyValue(account)
                 .retrieve()
                 .bodyToMono(AccountDTO.class);
     }

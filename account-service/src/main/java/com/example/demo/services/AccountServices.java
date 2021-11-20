@@ -70,21 +70,17 @@ public class AccountServices {
 
     private boolean isNumberExists(Long number) {
         Account byAccountNumber = accountRepository.findByAccountNumber(number);
-        if (byAccountNumber != null) {
-            return true;
-        }
-        return false;
+        return byAccountNumber != null;
     }
 
-    public AccountDTO updateBalanceByAccountId(Long id, Double balance) {
-        if (accountRepository.existsById(id)) {
-            Account entity = accountRepository
-                    .findById(id)
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-            entity.setBalance(balance);
-            return EntityDtoMapper.map(accountRepository.save(entity));
+    public AccountDTO updateBalanceByAccountId(AccountDTO dto) {
+        Account account;
+        if (accountRepository.existsById(dto.getId())) {
+            account = EntityDtoMapper.map(dto);
+            accountRepository.save(account);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
         }
+        return EntityDtoMapper.map(account);
     }
 }

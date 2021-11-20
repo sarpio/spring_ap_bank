@@ -5,11 +5,9 @@ import com.example.demo.rest.dto.AccountDTO;
 import com.example.demo.services.AccountServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
@@ -47,8 +45,9 @@ public class AccountController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("{id}/{balance}")
-    public AccountDTO updateAccountBalance(@PathVariable("id") Long id, @PathVariable("balance") Double balance) {
-        return accountServices.updateBalanceByAccountId(id, balance);
+    @PutMapping("{id}")
+    public AccountDTO updateAccountBalance(@Valid @PathVariable("id") Long id, @Valid @RequestBody AccountDTO dto) {
+        dto.setId(id);
+        return accountServices.updateBalanceByAccountId(dto);
     }
 }
