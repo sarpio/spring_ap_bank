@@ -7,7 +7,10 @@ spring:
     name: customer-service
   cloud:
     config:
-      server:
-        git:
-          uri: http://localhost:8888
-          label: latest
+      uri: http://localhost:8888
+      profile: default
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

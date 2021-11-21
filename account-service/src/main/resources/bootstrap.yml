@@ -7,10 +7,8 @@ spring:
     name: account-service
   cloud:
     config:
-      server:
-        git:
-          uri: http://localhost:8888
-          label: main
+      uri: http://localhost:8888
+      profile: default
 management:
   endpoints:
     web:
