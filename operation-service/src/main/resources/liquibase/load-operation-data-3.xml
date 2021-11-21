@@ -1,0 +1,38 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="Piotr Sarnecki" id="insert-example-accounts-3">
+        <insert tableName="operation">
+            <column name="id" value="9"/>
+            <column name="account_id" value="3"/>
+            <column name="foreign_account" value="3021"/>
+            <column name="transaction_date" value="2021-10-12 10:00:00"/>
+            <column name="value" value="50000"/>
+            <column name="type" value="INCOME"/>
+        </insert>
+        <insert tableName="operation">
+            <column name="id" value="10"/>
+            <column name="account_id" value="3"/>
+            <column name="foreign_account" value="3022"/>
+            <column name="transaction_date" value="2021-10-15 11:00:00"/>
+            <column name="value" value="-2500"/>
+            <column name="type" value="EXPENSE"/>
+        </insert>
+        <insert tableName="operation">
+            <column name="id" value="11"/>
+            <column name="account_id" value="3"/>
+            <column name="foreign_account" value="3022"/>
+            <column name="transaction_date" value="2021-10-17 15:00:00"/>
+            <column name="value" value="-6520"/>
+            <column name="type" value="EXPENSE"/>
+        </insert>
+        <insert tableName="operation">
+            <column name="id" value="12"/>
+            <column name="account_id" value="3"/>
+            <column name="foreign_account" value="3024"/>
+            <column name="transaction_date" value="2021-10-16 16:00:00"/>
+            <column name="value" value="2500.00"/>
+            <column name="type" value="INCOME"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
