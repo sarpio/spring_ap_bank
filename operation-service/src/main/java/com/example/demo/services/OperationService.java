@@ -37,7 +37,6 @@ public class OperationService {
         if (balance + value < 0 && dto.getType().equals(Type.EXPENSE)) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
-
         LocalDateTime time = LocalDateTime.now();
         dto.setTransactionDate(time);
         Operation entity = EntityDtoMapper.map(dto);
@@ -66,7 +65,6 @@ public class OperationService {
                 .stream()
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
-
     }
 
     private AccountDTO recalculateAccountBalance(Long id) {

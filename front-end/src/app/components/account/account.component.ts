@@ -23,7 +23,6 @@ export class AccountComponent implements OnInit {
   fetchAccounts() {
     this.accountService.getAllAccounts().subscribe((data: Account[]) => {
       this.accounts = data;
-      // console.log(this.accounts);
         const accountsArray: any[] = Array.of(data);
         console.log(accountsArray)
     }, error => {

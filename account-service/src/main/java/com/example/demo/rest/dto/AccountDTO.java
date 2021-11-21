@@ -30,6 +30,6 @@ public class AccountDTO {
     private Integer isForeign;
     private Currency currency;
     private Double balance;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private List<OperationDTO> operations;
-
 }

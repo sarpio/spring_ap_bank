@@ -28,7 +28,9 @@ public class AccountServices {
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
         for (AccountDTO dto : accountsDTO) {
-            dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
+            dto.setOperations(operationWebService
+                    .getAllCustomerAccountsByAccountId(dto.getId())
+                    .blockFirst());
         }
         return accountsDTO;
     }
@@ -63,7 +65,7 @@ public class AccountServices {
             accountRepository.deleteById(id);
             return "Account removed";
         } else {
-            return new ResponseStatusException(HttpStatus.NOT_FOUND).toString();
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -94,7 +96,7 @@ public class AccountServices {
             account = EntityDtoMapper.map(dto);
             accountRepository.save(account);
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
         return EntityDtoMapper.map(account);
     }

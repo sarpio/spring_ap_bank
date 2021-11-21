@@ -5,12 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
-import javax.ws.rs.DefaultValue;
+
 
 @Table(name = "account")
 @Data
