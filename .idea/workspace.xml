@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1742649-6f81-42a1-ab9a-5b5c02974afd" name="Default Changelist" comment="Full Configured All Services: Account, Operation, Customer">
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/load-account-data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/load-operation-data-1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/load-operation-data-2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/load-operation-data-3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/liquibase-changeLog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/liquibase/liquibase-changeLog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/liquibase-changeLog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/resources/liquibase/liquibase-changeLog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/operation-service/src/main/java/com/example/demo/services/OperationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,14 +305,7 @@
       <workItem from="1637263328354" duration="917000" />
       <workItem from="1637304893442" duration="25625000" />
       <workItem from="1637399950319" duration="26312000" />
-      <workItem from="1637482502650" duration="3438000" />
-    </task>
-    <task id="LOCAL-00002" summary="test commit">
-      <created>1632765699839</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1632765699839</updated>
+      <workItem from="1637482502650" duration="3901000" />
     </task>
     <task id="LOCAL-00003" summary="test commit">
       <created>1632765814122</created>
@@ -655,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637482850674</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Full Configured All Services: Account, Operation, Customer">
+      <created>1637487324399</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1637487324399</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

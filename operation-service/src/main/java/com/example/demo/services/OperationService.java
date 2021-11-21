@@ -34,7 +34,7 @@ public class OperationService {
             value = Math.abs(dto.getValue());
             dto.setValue(value);
         }
-        if (balance + value < 0 && dto.getType().equals(Type.EXPENSE)){
+        if (balance + value < 0 && dto.getType().equals(Type.EXPENSE)) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
 
@@ -59,10 +59,14 @@ public class OperationService {
 
     public List<OperationDTO> getListOfTransactionByAccountId(Long id) {
         List<Operation> accountOperationsList = operationRepository.findByAccountId(id);
+        if (accountOperationsList.size() == 0) {
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+        }
         return accountOperationsList
                 .stream()
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
+
     }
 
     private AccountDTO recalculateAccountBalance(Long id) {
