@@ -10,4 +10,9 @@ spring:
       server:
         git:
           uri: http://localhost:8888
-          label: latest
+          label: main
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
