@@ -3,6 +3,8 @@ server:
 eureka:
   instance:
     virtual-host-name: EUREKA-SERVICE
+    hostname: localhost
   client:
     fetch-registry: false
     register-with-eureka: false
+#    service-url: "defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/"
