@@ -13,6 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,8 +24,22 @@ public class OperationService {
     public final AccountWebService accountWebService;
 
     public OperationDTO addNewOperation(OperationDTO dto, Type type) {
+        Double balance = Objects.requireNonNull(accountWebService.getAccount(dto.getAccountId()).block()).getBalance();
+        Double value;
         dto.setType(type);
-        dto.setTransactionDate(LocalDateTime.now());
+        if (type.equals(Type.EXPENSE)) {
+            value = -Math.abs(dto.getValue());
+            dto.setValue(value);
+        } else {
+            value = Math.abs(dto.getValue());
+            dto.setValue(value);
+        }
+        if (balance + value < 0 && dto.getType().equals(Type.EXPENSE)){
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+        }
+
+        LocalDateTime time = LocalDateTime.now();
+        dto.setTransactionDate(time);
         Operation entity = EntityDtoMapper.map(dto);
         operationRepository.save(entity);
         recalculateAccountBalance(entity.getAccountId());
@@ -67,6 +82,4 @@ public class OperationService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
     }
-
-
 }

@@ -4,6 +4,7 @@ import com.example.demo.entity.Type;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
@@ -27,6 +28,7 @@ public class OperationDTO {
 
     @Min(1/10)
     private double value;
+
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Type type;
 }
