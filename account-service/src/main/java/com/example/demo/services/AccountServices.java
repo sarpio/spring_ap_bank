@@ -69,6 +69,9 @@ public class AccountServices {
 
     public List<AccountDTO> findByCustomerId(Long customerId) {
         List<Account> accounts = accountRepository.findByCustomerId(customerId);
+        if (accounts.size()==0) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
         List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
         for (AccountDTO dto : accountDTOS) {
             dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
