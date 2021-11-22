@@ -59,7 +59,7 @@ public class OperationService {
     public List<OperationDTO> getListOfTransactionByAccountId(Long id) {
         List<Operation> accountOperationsList = operationRepository.findByAccountId(id);
         if (accountOperationsList.size() == 0) {
-            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given Id not exists or has no operation registered");
         }
         return accountOperationsList
                 .stream()
