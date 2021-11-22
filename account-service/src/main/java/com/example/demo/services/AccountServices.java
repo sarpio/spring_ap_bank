@@ -40,7 +40,7 @@ public class AccountServices {
                 .findById(id)
                 .map(EntityDtoMapper::map)
                 .orElseThrow(
-                        () -> new ResponseStatusException(HttpStatus.NOT_FOUND)
+                        () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Provided id not exists")
                 );
         List<OperationDTO> operationDTOS = operationWebService.getAllCustomerAccountsByAccountId(id).blockFirst();
         accountDTO.setOperations(operationDTOS);
@@ -65,14 +65,14 @@ public class AccountServices {
             accountRepository.deleteById(id);
             return "Account removed";
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cannot remove account because given id not exists");
         }
     }
 
     public List<AccountDTO> findByCustomerId(Long customerId) {
         List<Account> accounts = accountRepository.findByCustomerId(customerId);
         if (accounts.size()==0) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found customer with given id");
         }
         List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
         for (AccountDTO dto : accountDTOS) {
@@ -96,7 +96,7 @@ public class AccountServices {
             account = EntityDtoMapper.map(dto);
             accountRepository.save(account);
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given id not exists");
         }
         return EntityDtoMapper.map(account);
     }

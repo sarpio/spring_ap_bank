@@ -49,7 +49,7 @@ public class OperationService {
         Long accountId;
         Operation operation = operationRepository
                 .findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Operation with given id not exists"));
         accountId = operation.getAccountId();
         operationRepository.deleteById(id);
         recalculateAccountBalance(accountId);
@@ -74,14 +74,14 @@ public class OperationService {
         try {
             account = accountWebService.getAccount(id).block();
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Provided account id not exists");
         }
         if (account != null) {
             account.setBalance(balance);
             /*WebClient PUT operation*/
             return accountWebService.putAccount(account).block();
         } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Account not exists with given id");
         }
     }
 }

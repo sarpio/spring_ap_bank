@@ -1,5 +1,7 @@
 server:
   port: 8200
+  error:
+    include-message: always
 spring:
   profiles:
     active: default

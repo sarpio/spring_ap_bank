@@ -54,7 +54,7 @@ public class CustomerService {
             customerRepository.deleteById(id);
             return String.format("Customer with ID:%s has been deleted", id);
         } else {
-            throw new EntityNotFoundException("Customer not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found");
         }
     }
 
