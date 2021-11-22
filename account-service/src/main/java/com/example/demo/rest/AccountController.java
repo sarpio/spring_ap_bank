@@ -3,6 +3,7 @@ package com.example.demo.rest;
 import com.example.demo.entity.Currency;
 import com.example.demo.rest.dto.AccountDTO;
 import com.example.demo.services.AccountServices;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +20,13 @@ public class AccountController {
     private final AccountServices accountServices;
 
     @GetMapping
+    @CircuitBreaker(name = "detailForAllAccountsOperations")
     public ResponseEntity<List<AccountDTO>> getAllAccounts() {
         return ResponseEntity.ok(accountServices.findAllAccounts());
     }
 
     @GetMapping("{id}")
+    @CircuitBreaker(name = "detailForSingleAccountOperations", fallbackMethod = "myAccountFallBack")
     public ResponseEntity<AccountDTO> getAccountById(@PathVariable Long id) {
         return ResponseEntity.ok(accountServices.findAccountById(id));
     }

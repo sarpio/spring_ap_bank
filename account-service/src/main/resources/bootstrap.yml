@@ -25,3 +25,14 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      detailsForCustomerSuppoerApp:
+        minimumNumberOfCalls: 5
+        faulureRateThreshold: 50
+        waitDurationInOpenState: 30000
+        permittedNumberOfCallsInHalfOpenState: 2
