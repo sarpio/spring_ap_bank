@@ -7,4 +7,15 @@ eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
+    service-url: "defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/"
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: default
+ribbon:
+  eureka:
+    enabled: false
 #    service-url: "defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/"
