@@ -1,0 +1,52 @@
+server:
+  port: 9000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: gateway-service
+  config:
+    import: optional:configserver:http://localhost:8761
+  cloud:
+    loadbalancer:
+      enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: accountModule
+          uri: http://localhost:8100/api/account/
+          predicates:
+            - Path=/api/account/**
+          filters:
+            - AddRequestHeader=first-request, first-requeest-header
+            - AddResponseHeader=first-response, first-response-header
+        - id: customerModule
+          uri: http://localhost:8200/api/customer/
+          predicates:
+            - Path=/api/customer/**
+          filters:
+            - AddRequestHeader=first-request, first-requeest-header
+            - AddResponseHeader=first-response, first-response-header
+        - id: operationModule
+          uri: http://localhost:8300/api/operation/
+          predicates:
+            - Path=/api/operation/**
+          filters:
+            - AddRequestHeader=first-request, first-requeest-header
+            - AddResponseHeader=first-response, first-response-header

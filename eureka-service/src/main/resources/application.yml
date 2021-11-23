@@ -8,3 +8,8 @@ spring:
 ribbon:
   eureka:
     enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

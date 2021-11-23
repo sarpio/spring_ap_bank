@@ -20,8 +20,8 @@ management:
     shutdown:
       enabled: true
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
     fetch-registry: true
     register-with-eureka: true
+  instance:
+    prefer-ip-address: true
