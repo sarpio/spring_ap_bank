@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequiredArgsConstructor
-@RequestMapping("/api/operation/")
+@RequestMapping("/api/operation")
 public class OperationController {
 
     private final OperationService operationService;
@@ -24,12 +24,12 @@ public class OperationController {
     return ResponseEntity.ok(operationService.addNewOperation(dto, type));
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<List<OperationDTO>> getAccountOperations(@Valid @PathVariable("id") Long id) {
         return ResponseEntity.ok(operationService.getListOfTransactionByAccountId(id));
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteOperationById(@Valid @PathVariable("id") Long id) {
         return ResponseEntity.ok(operationService.cancelOperationById(id));
     }

@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/account/")
+@RequestMapping("/api/account")
 @CrossOrigin("*")
 public class AccountController {
 
@@ -23,7 +23,7 @@ public class AccountController {
         return ResponseEntity.ok(accountServices.findAllAccounts());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<AccountDTO> getAccountById(@PathVariable Long id) {
         return ResponseEntity.ok(accountServices.findAccountById(id));
     }
@@ -45,7 +45,7 @@ public class AccountController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public AccountDTO updateAccountBalance(@Valid @PathVariable("id") Long id, @Valid @RequestBody AccountDTO dto) {
         dto.setId(id);
         return accountServices.updateBalanceByAccountId(dto);

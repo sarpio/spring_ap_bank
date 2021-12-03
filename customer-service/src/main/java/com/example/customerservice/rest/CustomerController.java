@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/customer/")
+@RequestMapping("/api/customer")
 @CrossOrigin("*")
 public class CustomerController {
 
@@ -21,7 +21,7 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.findAll());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<CustomerDTO> findById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(customerService.findById(id));
     }
@@ -31,12 +31,12 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.createCustomer(dto));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(customerService.deleteCustomerById(id));
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<CustomerDTO>updateCustomerById(@PathVariable Long id, @RequestBody CustomerDTO dto) {
         return ResponseEntity.ok(customerService.updateCustomer(id, dto));
     }
