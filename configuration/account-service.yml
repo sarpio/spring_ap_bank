@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/sarpio_account
-    username: root
-    password: password
+    username: AnatoliiHamza
+    password: 123Anatolii
   application:
     name: account-service
   jpa:
