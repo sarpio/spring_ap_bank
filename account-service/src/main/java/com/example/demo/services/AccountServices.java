@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import com.example.demo.entity.Account;
 import com.example.demo.entity.Currency;
+import com.example.demo.repo.AccountCache;
 import com.example.demo.repo.AccountRepository;
 import com.example.demo.rest.dto.AccountDTO;
 import com.example.demo.rest.dto.OperationDTO;
@@ -20,6 +21,7 @@ public class AccountServices {
 
     private final AccountRepository accountRepository;
     private final OperationWebService operationWebService;
+    private final AccountCache accountCache;
 
     public List<AccountDTO> findAllAccounts() {
         List<AccountDTO> accountsDTO = accountRepository
@@ -36,13 +38,14 @@ public class AccountServices {
     }
 
     public AccountDTO findAccountById(Long id) {
-        AccountDTO accountDTO = accountRepository
+        AccountDTO accountDTO = accountCache.getAccount(id).orElseGet(()->accountRepository
                 .findById(id)
                 .map(EntityDtoMapper::map)
                 .orElseThrow(
                         () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Provided id not exists")
-                );
+                ));
         List<OperationDTO> operationDTOS = operationWebService.getAllCustomerAccountsByAccountId(id).blockFirst();
+        accountCache.saveAccountInCache(accountDTO);
         accountDTO.setOperations(operationDTOS);
         return accountDTO;
     }
@@ -56,12 +59,14 @@ public class AccountServices {
         Account entity = EntityDtoMapper.map(dto);
         entity.setBalance(0.0);
         accountRepository.save(entity);
+        accountCache.saveAccountInCache(EntityDtoMapper.map(entity));
         return EntityDtoMapper.map(entity);
     }
 
     public String deleteAccountById(Long id) {
         boolean present = accountRepository.findById(id).isPresent();
         if (present) {
+            accountCache.deleteAccountFromCache(id);
             accountRepository.deleteById(id);
             return "Account removed";
         } else {
@@ -95,6 +100,7 @@ public class AccountServices {
         if (accountRepository.existsById(dto.getId())) {
             account = EntityDtoMapper.map(dto);
             accountRepository.save(account);
+            accountCache.saveAccountInCache(dto);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given id not exists");
         }

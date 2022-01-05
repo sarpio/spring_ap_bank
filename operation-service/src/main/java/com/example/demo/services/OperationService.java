@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import com.example.demo.entity.Operation;
 import com.example.demo.entity.Type;
+import com.example.demo.repo.OperationCache;
 import com.example.demo.repo.OperationRepository;
 import com.example.demo.rest.dto.AccountDTO;
 import com.example.demo.rest.dto.OperationDTO;
@@ -22,6 +23,7 @@ public class OperationService {
 
     public final OperationRepository operationRepository;
     public final AccountWebService accountWebService;
+    public final OperationCache operationCache;
 
     public OperationDTO addNewOperation(OperationDTO dto, Type type) {
         Double balance = Objects.requireNonNull(accountWebService.getAccount(dto.getAccountId()).block()).getBalance();
@@ -41,6 +43,7 @@ public class OperationService {
         dto.setTransactionDate(time);
         Operation entity = EntityDtoMapper.map(dto);
         operationRepository.save(entity);
+        operationCache.saveOperationInCache(EntityDtoMapper.map(entity));
         recalculateAccountBalance(entity.getAccountId());
         return EntityDtoMapper.map(entity);
     }
@@ -52,6 +55,7 @@ public class OperationService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Operation with given id not exists"));
         accountId = operation.getAccountId();
         operationRepository.deleteById(id);
+        operationCache.deleteOperationFromCache(id);
         recalculateAccountBalance(accountId);
         return "Operation with id:" + id + " has been withdrawn";
     }
