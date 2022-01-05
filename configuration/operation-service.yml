@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/sarpio_transaction
-    username: root
-    password: password
+    username: AnatoliiHamza
+    password: 123Anatolii
   jpa:
     hibernate:
       ddl-auto: update
