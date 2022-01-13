@@ -31,11 +31,10 @@ public class OperationService {
         dto.setType(type);
         if (type.equals(Type.EXPENSE)) {
             value = -Math.abs(dto.getValue());
-            dto.setValue(value);
         } else {
             value = Math.abs(dto.getValue());
-            dto.setValue(value);
         }
+        dto.setValue(value);
         if (balance + value < 0 && dto.getType().equals(Type.EXPENSE)) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
