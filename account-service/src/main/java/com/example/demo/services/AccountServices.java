@@ -38,11 +38,11 @@ public class AccountServices {
     }
 
     public AccountDTO findAccountById(Long id) {
-        AccountDTO accountDTO = accountCache.getAccount(id).orElseGet(()->accountRepository
+        AccountDTO accountDTO = accountCache.getAccount(id).orElseGet(() -> accountRepository
                 .findById(id)
                 .map(EntityDtoMapper::map)
                 .orElseThrow(
-                        () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Provided id not exists")
+                        () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Provided id not exists")
                 ));
         List<OperationDTO> operationDTOS = operationWebService.getAllCustomerAccountsByAccountId(id).blockFirst();
         accountCache.saveAccountInCache(accountDTO);
@@ -75,15 +75,20 @@ public class AccountServices {
     }
 
     public List<AccountDTO> findByCustomerId(Long customerId) {
-        List<Account> accounts = accountRepository.findByCustomerId(customerId);
-        if (accounts.size()==0) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found customer with given id");
+        if (accountCache.getAccountByCustomerId(customerId).isEmpty()) {
+            List<Account> accounts = accountRepository.findByCustomerId(customerId);
+            if (accounts.size() == 0) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found customer with given id");
+            }
+            List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
+            for (AccountDTO dto : accountDTOS) {
+                dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
+            }
+            return accountDTOS;
+        } else {
+            return accountCache.getAccountByCustomerId(customerId);
         }
-        List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
-        for (AccountDTO dto : accountDTOS) {
-            dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
-        }
-        return accountDTOS;
+
     }
 
     public Long setAccountNumber() {
@@ -95,15 +100,13 @@ public class AccountServices {
         return byAccountNumber != null;
     }
 
-    public AccountDTO updateBalanceByAccountId(AccountDTO dto) {
-        Account account;
+    public void updateBalanceByAccountId(AccountDTO dto) {
         if (accountRepository.existsById(dto.getId())) {
-            account = EntityDtoMapper.map(dto);
+            Account account = EntityDtoMapper.map(dto);
             accountRepository.save(account);
             accountCache.saveAccountInCache(dto);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given id not exists");
         }
-        return EntityDtoMapper.map(account);
     }
 }

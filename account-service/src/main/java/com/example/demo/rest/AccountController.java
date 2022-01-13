@@ -4,6 +4,7 @@ import com.example.demo.entity.Currency;
 import com.example.demo.rest.dto.AccountDTO;
 import com.example.demo.services.AccountServices;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,8 +47,9 @@ public class AccountController {
     }
 
     @PutMapping("/{id}")
-    public AccountDTO updateAccountBalance(@Valid @PathVariable("id") Long id, @Valid @RequestBody AccountDTO dto) {
+    @ResponseStatus(HttpStatus.OK)
+    public void updateAccountBalance(@Valid @PathVariable("id") Long id, @Valid @RequestBody AccountDTO dto) {
         dto.setId(id);
-        return accountServices.updateBalanceByAccountId(dto);
+        accountServices.updateBalanceByAccountId(dto);
     }
 }

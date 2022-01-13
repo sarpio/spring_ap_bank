@@ -61,14 +61,17 @@ public class OperationService {
     }
 
     public List<OperationDTO> getListOfTransactionByAccountId(Long id) {
-        List<Operation> accountOperationsList = operationRepository.findByAccountId(id);
-        if (accountOperationsList.size() == 0) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given Id not exists or has no operation registered");
+        if(operationCache.getOperationByAccountId(id).isEmpty()) {
+            List<Operation> accountOperationsList = operationRepository.findByAccountId(id);
+            if (accountOperationsList.size() == 0) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given Id not exists or has no operation registered");
+            }
+            return accountOperationsList
+                    .stream()
+                    .map(EntityDtoMapper::map)
+                    .collect(Collectors.toList());
         }
-        return accountOperationsList
-                .stream()
-                .map(EntityDtoMapper::map)
-                .collect(Collectors.toList());
+        return operationCache.getOperationByAccountId(id);
     }
 
     private AccountDTO recalculateAccountBalance(Long id) {
