@@ -1,26 +1,49 @@
-<h1>{{title}}</h1>
-<hr>
-<table class="table">
-  <thead>
-  <tr>
-    <th>#</th>
-    <th>Owner name</th>
-    <th>Account number</th>
-    <th>Currency</th>
-    <th>Origin</th>
-    <th>Balance</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let account of accounts">
-    <td>{{account.id}}</td>
-    <td>
-    </td>
-    <td>{{account.accountNumber}}</td>
-    <td>{{account.balance}} {{account.currency}}</td>
-    <td>{{account.foreign}}</td>
-  </tr>
-  </tbody>
-</table>
-<hr>
+<h1 class="text-center">{{title}}</h1>
+<div class="container">
+  <div class="col-sm-3">
+
+    <table class="table table-borderless">
+      <tr class="m-3">
+        <td class="text-end pe-5 fw-bold">Account Number:</td>
+        <td class="text-end">{{accountNumber}}</td>
+      </tr>
+      <tr class="m-3" style="line-height: 50px;">
+        <td class="text-end pe-5 fw-bold mt-2">Customer Name:</td>
+        <td class="text-end">{{customerName}}</td>
+      </tr>
+      <tr class="m-3">
+        <td class="text-end pe-5 fw-bold mt-2">Account balance:</td>
+        <td class="text-end">{{balance| currency:'':'':'0.2-2':''}}</td>
+      </tr>
+      <tr class="m-3" style="line-height: 50px;">
+        <td class="text-end pe-5 fw-bold mt-2">Account currency:</td>
+        <td class="text-end">{{currency}}</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+  <h1 class="text-center">Account Operations</h1>
+  <table class="table table-striped">
+    <thead class="table-info">
+    <tr>
+      <td class="text-center">Account No</td>
+      <td class="text-center">Transaction Date</td>
+      <td class="text-center">Transaction type</td>
+      <td class="text-end">Transaction value</td>
+      <td class="text-end">Currency</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let o of operations">
+      <td class="text-center">{{o.foreignAccount}}</td>
+      <td class="text-center">{{o.transactionDate | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+      <td class="text-center">{{o.type}}</td>
+      <td class="text-end">{{o.value | currency:'':'':'0.2-2':''}}</td>
+      <td class="text-end">{{currency}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Verified balance: {{balance| currency:'':'':'0.2-2':''}} {{currency}}</p>
+</div>
+
 

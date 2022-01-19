@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { CustomerComponent } from './components/customer/customer.component';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {CustomerComponent} from './components/customer/customer.component';
 import {HttpClientModule} from "@angular/common/http";
-import { AccountComponent } from './components/account/account.component';
-import { YesNoPipe } from './components/customer/yes-no.pipe';
-import { AddCustomerComponent } from './components/customer/create/add-customer/add-customer.component';
+import {AccountComponent} from './components/account/account.component';
+import {AddCustomerComponent} from './components/customer/create/add-customer/add-customer.component';
+import {YesNoPipe} from "./yes-no.pipe";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,10 +16,13 @@ import { AddCustomerComponent } from './components/customer/create/add-customer/
     CustomerComponent,
     AccountComponent,
     YesNoPipe,
-    AddCustomerComponent
+    AddCustomerComponent,
+    YesNoPipe,
+    YesNoPipe
 
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
@@ -26,4 +30,5 @@ import { AddCustomerComponent } from './components/customer/create/add-customer/
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

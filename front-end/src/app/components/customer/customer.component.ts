@@ -23,7 +23,6 @@ export class CustomerComponent implements OnInit {
   getAllCustomers() {
     this.customerService.getAllCustomers().subscribe(data => {
       this.customers = data as Customer[];
-      console.log(this.customers)
     });
   }
 }

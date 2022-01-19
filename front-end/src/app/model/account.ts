@@ -1,11 +1,11 @@
-import {Customer} from "./customer";
+import {Operation} from "./operation";
 
 export interface Account {
   id?: number;
-  accountNumber: string;
-  balance: number;
-  customer: Customer;
+  accountNumber: number;
+  customerId: number;
+  isForeign: number;
   currency: string;
-  foreign: boolean;
-  customerName: string;
+  balance: number;
+  operations?: Operation;
 }

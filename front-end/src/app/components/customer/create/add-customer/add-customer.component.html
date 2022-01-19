@@ -1,26 +1,26 @@
 <div class="container-lg text-center justify-content-center">
 <h1> Register new client with account</h1>
-  <form class="m-5">
+  <form class="m-5" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
     <div class="row row-cols-1 mb-1">
       <label class="col-sm-4 col-form-label text-end">Customer name:</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" placeholder="Customer name">
+        <input type="text" class="form-control"  name="name" ngModel placeholder="Customer name">
       </div>
     </div>
     <div class="row row-cols-1 mb-1">
       <label class="col-sm-4 col-form-label text-end">Account No:</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" placeholder="Account No">
+        <input type="text" class="form-control" name="accountNumber" ngModel placeholder="Account Number">
       </div>
     </div>
     <div class="row row-cols-1 mb-1">
       <label class="col-sm-4 col-form-label text-end">Account currency:</label>
-      <div class="col-sm-2">
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Currency</option>
-        <option value="1">PLN</option>
-        <option value="2">USD</option>
-        <option value="3">EUR</option>
+      <div class="col-sm-3">
+      <select class="form-select" aria-label="Default select example" name="currency" ngModel>
+        <option disabled selevete value="">Currency</option>
+        <option value="PLN">PLN</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
       </select>
       </div>
     </div>
@@ -31,4 +31,3 @@
   </form>
 </div>
 
-<div></div>
