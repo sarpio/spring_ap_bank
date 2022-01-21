@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -15,13 +16,13 @@ public class AccountWebService {
 
     @Autowired
     public AccountWebService(WebClient.Builder builder) {
-        this.webClient = builder.baseUrl("http://localhost:8100/api/account/").build();
+        this.webClient = builder.baseUrl("http://localhost:8100/api/account").build();
     }
 
     public Flux<AccountDTO> getAccount(Long id) {
         return this.webClient
                 .get()
-                .uri("customer/{id}", id)
+                .uri("/customer/{id}", id)
                 .retrieve()
                 .bodyToFlux(AccountDTO.class);
     }
@@ -33,5 +34,13 @@ public class AccountWebService {
                 .retrieve()
                 .bodyToFlux(AccountDTO.class)
                 .buffer();
+    }
+
+    public Mono<AccountDTO> postAccount(AccountDTO dto) {
+        return this.webClient
+                .post()
+                .uri("")
+                .retrieve()
+                .bodyToMono(AccountDTO.class);
     }
 }

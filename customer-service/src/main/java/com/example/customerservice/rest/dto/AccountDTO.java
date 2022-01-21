@@ -1,22 +1,23 @@
 package com.example.customerservice.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
-import java.util.Random;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class AccountDTO {
 
+    @JsonIgnoreProperties(allowSetters = true)
     private Long id;
     private String accountNumber;
-//    private Long customerId;
-    @JsonIgnore
-    private CustomerDTO customer;
+    private Long customerId;
+
     private boolean isForeign;
     private String currency;
+//    @ReadOnlyProperty
+    @JsonIgnoreProperties(allowSetters = true)
     private Long balance;
 }

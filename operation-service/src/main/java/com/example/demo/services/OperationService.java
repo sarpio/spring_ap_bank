@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -63,7 +65,8 @@ public class OperationService {
         if(operationCache.getOperationByAccountId(id).isEmpty()) {
             List<Operation> accountOperationsList = operationRepository.findByAccountId(id);
             if (accountOperationsList.size() == 0) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given Id not exists or has no operation registered");
+//                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given Id not exists or has no operation registered");
+                return null;
             }
             return accountOperationsList
                     .stream()

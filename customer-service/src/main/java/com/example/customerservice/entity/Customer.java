@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 
 @Table(name = "customer")
@@ -22,4 +24,5 @@ public class Customer {
 
     @Column(name = "name")
     private String name;
+
 }

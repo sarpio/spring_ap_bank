@@ -21,6 +21,7 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
     private final AccountWebService accountWebService;
     private final CustomerCache customerCache;
+    private final AccountFeignClient accountFeignClient;
 
     public List<CustomerDTO> findAll() {
         List<CustomerDTO> customersDTO = customerRepository
@@ -29,19 +30,19 @@ public class CustomerService {
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
         for (CustomerDTO dto : customersDTO) {
-            dto.setAccounts(accountWebService.getAllCustomerAccounts(dto.getId()).blockFirst());
+            dto.setAccounts(accountFeignClient.getCustomerAccounts(dto.getId()));
         }
         return customersDTO;
     }
 
     public CustomerDTO findById(Long id) {
-        CustomerDTO customerDTO = customerCache.getCustomer(id)
-                .orElseGet(()->customerRepository
+//        CustomerDTO customerDTO = customerCache.getCustomer(id)
+        CustomerDTO customerDTO = customerRepository
                 .findById(id)
                 .map(EntityDtoMapper::map)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found ID: " + id)));
-        List<AccountDTO> accountDTOS = accountWebService.getAllCustomerAccounts(id).blockFirst();
-        customerCache.saveCustomerInCache(customerDTO);
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found ID: " + id));
+        List<AccountDTO> accountDTOS = accountFeignClient.getCustomerAccounts(id);
+//        customerCache.saveCustomerInCache(customerDTO);
         customerDTO.setAccounts(accountDTOS);
         return customerDTO;
     }

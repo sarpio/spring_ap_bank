@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class AccountServices {
 
     private final AccountRepository accountRepository;
-    private final OperationWebService operationWebService;
+    private final OperationFeignClient operationFeignClient;
     private final AccountCache accountCache;
 
     public List<AccountDTO> findAllAccounts() {
@@ -30,21 +30,21 @@ public class AccountServices {
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
         for (AccountDTO dto : accountsDTO) {
-            dto.setOperations(operationWebService
-                    .getAllCustomerAccountsByAccountId(dto.getId())
-                    .blockFirst());
+            dto.setOperations(operationFeignClient
+                    .getAllCustomerAccountsByAccountId(dto.getId()));
         }
         return accountsDTO;
     }
 
     public AccountDTO findAccountById(Long id) {
-        AccountDTO accountDTO = accountCache.getAccount(id).orElseGet(() -> accountRepository
+//        AccountDTO accountDTO = accountCache.getAccount(id).orElseGet(() -> accountRepository
+        AccountDTO accountDTO =  accountRepository
                 .findById(id)
                 .map(EntityDtoMapper::map)
                 .orElseThrow(
                         () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Provided id not exists")
-                ));
-        List<OperationDTO> operationDTOS = operationWebService.getAllCustomerAccountsByAccountId(id).blockFirst();
+                );
+        List<OperationDTO> operationDTOS = operationFeignClient.getAllCustomerAccountsByAccountId(id);
         accountCache.saveAccountInCache(accountDTO);
         accountDTO.setOperations(operationDTOS);
         return accountDTO;
@@ -75,19 +75,19 @@ public class AccountServices {
     }
 
     public List<AccountDTO> findByCustomerId(Long customerId) {
-        if (accountCache.getAccountByCustomerId(customerId).isEmpty()) {
+//        if (accountCache.getAccountByCustomerId(customerId).isEmpty()) {
             List<Account> accounts = accountRepository.findByCustomerId(customerId);
             if (accounts.size() == 0) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found customer with given id");
             }
             List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
             for (AccountDTO dto : accountDTOS) {
-                dto.setOperations(operationWebService.getAllCustomerAccountsByAccountId(dto.getId()).blockFirst());
+                dto.setOperations(operationFeignClient.getAllCustomerAccountsByAccountId(dto.getId()));
             }
             return accountDTOS;
-        } else {
-            return accountCache.getAccountByCustomerId(customerId);
-        }
+//        } else {
+//            return accountCache.getAccountByCustomerId(customerId);
+//        }
 
     }
 
