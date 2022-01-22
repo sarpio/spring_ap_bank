@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="sarpio_account@localhost" uuid="b4636382-11f8-42ef-9639-53c4edd9d236">
+    <data-source source="LOCAL" name="sarpio_account" uuid="b4636382-11f8-42ef-9639-53c4edd9d236">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/sarpio_account</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="account-service/Hibernate" uuid="97291879-4055-4768-b3ef-9f2f5bd1957c">
+    <data-source source="LOCAL" name="sarpio_operation" uuid="a153d8eb-bde2-4154-9b52-2fa65493c9ce">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/sarpio_account</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/sarpio_transaction</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="operation-service/Hibernate" uuid="c2e90c70-f8ed-4e71-a2da-9eade7b0a451">
+    <data-source source="LOCAL" name="sarpio_customer" uuid="f8f3e407-fa88-4a30-8753-350d45781e9b">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://piotrsarnecki.com:3306/sarpio_operation</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/sarpio_customer</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
