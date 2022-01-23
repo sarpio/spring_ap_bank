@@ -1,5 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from "../../../../services/customer.service";
+import {NgForm} from "@angular/forms";
+import {AccountService} from "../../../../services/account.service";
+import {Account} from "../../../../model/account";
+
+
+// import {Account} from "../../../../model/account";
+
 
 @Component({
   selector: 'app-add-customer',
@@ -8,56 +15,64 @@ import {CustomerService} from "../../../../services/customer.service";
 })
 export class AddCustomerComponent implements OnInit {
 
-  public id = 0;
+  customerName!: string;
+  accountNumber!: number;
+  currency!: string;
+  myCustomer: Customer = {
+    name: ''
+  }
 
-  constructor(private customerService: CustomerService) {
+  myCustomerId: number = 0;
+
+  constructor(private customerService: CustomerService, private accountService: AccountService) {
   }
 
   ngOnInit(): void {
   }
 
-  onSubmit(item: any) {
-    let customer: {
-      name: string;
-    }
+  onSubmit(form: NgForm) {
+    this.myCustomer.name = this.customerName
+    console.log(this.myCustomer)
+    this.customerService.addCustomer(this.myCustomer).subscribe(res => {
+      this.myCustomerId = Number(res.id);
+      console.log("Customer id: ", this.myCustomerId)
 
-    let account: {
-      accountNumber: number;
-      customerId: number;
-      isForeign: number;
-      currency: string;
-      balance: number;
-    }
-
-    customer = {
-      name: item.name
-    }
-    customer.name = item.name;
-
-    this.createCustomer(customer)
-    account = {
-      accountNumber: item.accountNumber,
-      customerId: this.id,
-      isForeign: 0,
-      currency: item.currency,
-      balance: 0
-    }
-    this.createAccount(account);
+      let a: Account = {
+        accountNumber: Number(this.accountNumber),
+        customerId: Number(res.id),
+        currency: String(this.currency),
+        isForeign:0,
+        balance:0
+      }
+      this.accountService.createAccount(a)
+        .subscribe(
+          res => {
+        console.log(res)
+      },
+          error => console.error(error))
+    });
 
   }
-
-  createCustomer(values: any) {
-    return this.customerService.addCustomer(values).subscribe(res => {
-      this.id = Number(res.id) + 1
-      console.log('new customer id is: ', this.id);
-
-    })
-  }
-
-  createAccount(values: any) {
-    console.log(values)
-    return this.customerService.createAccount(values).subscribe(res => {
-    })
-  }
-
 }
+
+export class Customer {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+// export class Account {
+//   accountNumber: number;
+//   customerId: number;
+//   currency: string;
+//
+//
+//   constructor(accountNumber: number, customerId: number, currency: string) {
+//     this.accountNumber = accountNumber;
+//     this.customerId = customerId;
+//     this.currency = currency;
+//
+//   }
+// }

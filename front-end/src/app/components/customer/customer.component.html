@@ -10,7 +10,7 @@
     <th class="text-center">Customer Name</th>
     <th class="text-center">Accout numbers</th>
     <th class="text-end">Account balance</th>
-    <th class="text-center">Foreign</th>
+    <th class="text-center">Operations</th>
   </tr>
   </thead>
   <tbody>
@@ -28,9 +28,11 @@
       </div>
     </td>
     <td>
-      <div *ngFor="let account of customer.accounts" class="t-right text-center">
-        {{account.isForeign | yesNo}}
-      </div>
+<!--      <div *ngFor="let account of customer.accounts" class="t-right text-center">-->
+<!--        {{account.isForeign | yesNo}}-->
+<!--      </div>-->
+      <button class="btn-sm btn-info">Edit</button>
+
     </td>
   </tr>
   </tbody>

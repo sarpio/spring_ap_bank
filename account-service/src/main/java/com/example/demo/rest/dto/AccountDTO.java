@@ -19,17 +19,21 @@ public class AccountDTO {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
-    @Min(1000)@Max(9999)
+
+    @Max(9999)
     private Long accountNumber;
+
     @NotNull
     @Min(1)
     private Long customerId;
+
     @Min(0)
     @Max(1)
     @NotNull
     private Integer isForeign;
     private Currency currency;
     private Double balance;
+
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private List<OperationDTO> operations;
 }

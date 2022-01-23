@@ -21,7 +21,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Min(1000)@Max(9999)
+    @Max(9999)
     @Column(name = "account_number")
     private Long accountNumber;
 

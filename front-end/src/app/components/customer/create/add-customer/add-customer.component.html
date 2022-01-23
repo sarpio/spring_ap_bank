@@ -1,33 +1,32 @@
 <div class="container-lg text-center justify-content-center">
-<h1> Register new client with account</h1>
-  <form class="m-5" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
-    <div class="row row-cols-1 mb-1">
-      <label class="col-sm-4 col-form-label text-end">Customer name:</label>
-      <div class="col-sm-6">
-        <input type="text" class="form-control"  name="name" ngModel placeholder="Customer name">
+  <h1> Register new client with account</h1>
+  <form #form=ngForm (ngSubmit)="onSubmit(form)" class="align-content-center m-auto">
+    <div class="row mb-3">
+      <label for="name" class="col-sm-2 col-form-label">Customer name:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="name" name="name" ngModel [(ngModel)]="customerName">
       </div>
     </div>
-    <div class="row row-cols-1 mb-1">
-      <label class="col-sm-4 col-form-label text-end">Account No:</label>
-      <div class="col-sm-6">
-        <input type="text" class="form-control" name="accountNumber" ngModel placeholder="Account Number">
+
+    <div class="row mb-3">
+      <label for="accountNumber" class="col-sm-2 col-form-label">Account number:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="accountNumber" name="AccountNumber" ngModel
+               [(ngModel)]="accountNumber">
       </div>
     </div>
-    <div class="row row-cols-1 mb-1">
-      <label class="col-sm-4 col-form-label text-end">Account currency:</label>
-      <div class="col-sm-3">
-      <select class="form-select" aria-label="Default select example" name="currency" ngModel>
-        <option disabled selevete value="">Currency</option>
-        <option value="PLN">PLN</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-      </select>
+
+    <div class="row mb-3">
+      <label for="currency" class="col-sm-2 col-form-label">Currency: </label>
+      <div class="col-sm-5">
+        <select class="form-select" id="currency" name="currency" [(ngModel)]="currency">
+          <option selected disabled>Choose ...</option>
+          <option value="PLN">PLN</option>
+          <option value="PLN">USD</option>
+          <option value="PLN">EUR</option>
+        </select>
       </div>
     </div>
-    <div>
-      <button class="btn btn-success m-2" style="width: 120px">Save</button>
-      <button class="btn btn-danger m-2" style="width: 120px">Cancel</button>
-    </div>
+    <button class="btn btn-primary">Submit</button>
   </form>
 </div>
-

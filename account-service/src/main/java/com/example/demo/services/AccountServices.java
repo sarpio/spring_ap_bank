@@ -50,8 +50,8 @@ public class AccountServices {
         return accountDTO;
     }
 
-    public AccountDTO createAccount(AccountDTO dto, Currency currency) {
-        dto.setCurrency(currency);
+    public AccountDTO createAccount(AccountDTO dto) {
+//        dto.setCurrency(currency);
         if (isNumberExists(dto.getAccountNumber()) || dto.getAccountNumber() == null) {
             dto.setAccountNumber(setAccountNumber());
             System.err.println("Detected duplicated number or number is missing. Account number generated automatically");

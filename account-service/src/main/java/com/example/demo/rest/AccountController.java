@@ -35,9 +35,8 @@ public class AccountController {
     }
 
     @PostMapping
-    public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO dto,
-                                                    @Valid @RequestParam Currency currency) {
-        return ResponseEntity.ok(accountServices.createAccount(dto, currency));
+    public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO dto) {
+        return ResponseEntity.ok(accountServices.createAccount(dto));
     }
 
     @DeleteMapping

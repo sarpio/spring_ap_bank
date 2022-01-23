@@ -10,10 +10,10 @@ import java.util.List;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
+
     @EntityGraph(type = EntityGraph.EntityGraphType.FETCH, attributePaths = "id")
     List<Account> findByCustomerId(Long id);
 
-    @Query(value = "SELECT DISTINCT * FROM account a JOIN FETCH WHERE a.account_number =?1", nativeQuery = true)
     Account findByAccountNumber(Long number);
 
     @Override

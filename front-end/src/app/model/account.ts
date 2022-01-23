@@ -4,8 +4,8 @@ export interface Account {
   id?: number;
   accountNumber: number;
   customerId: number;
-  isForeign: number;
+  isForeign?: number;
   currency: string;
-  balance: number;
+  balance?: number;
   operations?: Operation;
 }

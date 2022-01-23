@@ -4,7 +4,6 @@ import {AccountService} from "../../services/account.service";
 import {CustomerService} from "../../services/customer.service";
 import {ActivatedRoute} from "@angular/router";
 import {Customer} from "../../model/customer";
-import {Operation} from "../../model/operation";
 
 @Component({
   selector: 'app-account',
@@ -52,16 +51,16 @@ export class AccountComponent implements OnInit {
     })
   }
 
+
+
   getBalance() {
-    let range = 0;
-    if (this.operations.length !== null) {
+    if (this.operations !== null) {
       let range = this.operations.length;
       for (let i = 0; i < range; i++) {
         this.balance = this.balance + Number(this.operations[i].value)
       }
     }
   }
-
 }
 
 

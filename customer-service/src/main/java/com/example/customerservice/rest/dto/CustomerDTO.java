@@ -15,5 +15,6 @@ public class CustomerDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
     private String name;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private List<AccountDTO> accounts;
 }
