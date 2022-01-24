@@ -4,6 +4,7 @@ import {AccountService} from "../../services/account.service";
 import {CustomerService} from "../../services/customer.service";
 import {ActivatedRoute} from "@angular/router";
 import {Customer} from "../../model/customer";
+import {OperationsService} from "../../services/operations.service";
 
 @Component({
   selector: 'app-account',
@@ -25,6 +26,7 @@ export class AccountComponent implements OnInit {
 
   constructor(private accountService: AccountService,
               private customerService: CustomerService,
+              private operationService: OperationsService,
               private route: ActivatedRoute) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
@@ -60,6 +62,11 @@ export class AccountComponent implements OnInit {
         this.balance = this.balance + Number(this.operations[i].value)
       }
     }
+  }
+
+  deleteOperation(id: any){
+    console.log('Requested delete operation with id: ', id)
+      this.operationService.deleteOperation(id)
   }
 }
 

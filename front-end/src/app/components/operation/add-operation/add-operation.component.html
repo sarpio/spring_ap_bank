@@ -1,0 +1,49 @@
+
+<form class="form-control form-control-sm mt-5">
+<h1 class="text-center"> Add transaction to account</h1>
+  <div class="row mb-3 mt-5 justify-content-center">
+    <label for="customer" class="col-sm-3 col-form-label text-end">Customer:</label>
+    <div class="col-sm-2">
+      <select class="form-select form-select-sm" id="customer">
+        <option selected disabled>Choose ...</option>
+        <option value="PLN">Jaro</option>
+      </select>
+    </div>
+  </div>
+  <div class="row mb-3 justify-content-center">
+    <label for="customer" class="col-sm-3 col-form-label text-end">Account:</label>
+    <div class="col-sm-2">
+      <select class="form-select form-select-sm" id="account">
+        <option selected disabled>Choose ...</option>
+        <option value="PLN">1111</option>
+      </select>
+    </div>
+  </div>
+  <div class="row mb-3 justify-content-center">
+    <label for="foreignAccount" class="col-sm-3 col-form-label text-end">Foreign account No:</label>
+    <div class="col-sm-2">
+      <input type="number" class="form-control form-control-sm" name="foreignAccount" id="foreignAccount">
+    </div>
+  </div>
+  <div class="row mb-3 justify-content-center">
+    <label for="value" class="col-sm-3 col-form-label text-end">Value:</label>
+    <div class="col-sm-2">
+      <input type="number" class="form-control form-control-sm" name="foreignAccount" id="value">
+    </div>
+  </div>
+  <div class="row mb-3 justify-content-center">
+    <label for="type" class="col-sm-3 col-form-label text-end">Transaction type:</label>
+    <div class="col-sm-2">
+      <select class="form-select form-select-sm" id="type">
+        <option selected disabled>Choose ...</option>
+        <option value="EXPENSE">EXPENSE</option>
+        <option value="INCOME">INCOME</option>
+      </select>
+    </div>
+  </div>
+<div class="row mb-3">
+  <button class="btn-sm btn-info m-auto w-25">Save</button>
+  <button class="btn-sm btn-warning m-auto w-25">Cancel</button>
+
+</div>
+</form>

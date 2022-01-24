@@ -13,6 +13,6 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     @Override
-    @EntityGraph(type = EntityGraph.EntityGraphType.FETCH, attributePaths = "id")
+    @EntityGraph(type = EntityGraph.EntityGraphType.FETCH, attributePaths = {"id"})
     List<Customer> findAll();
 }

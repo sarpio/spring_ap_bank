@@ -33,8 +33,8 @@ export class CustomerService {
     return this.http.post<Customer>(this.customerUrl, JSON.stringify(customer), this.httpOptions)
   }
 
-  public createAccount(account: Account): Observable<Account>{
-    return this.http.post<Account>(this.accountUrl, JSON.stringify(account), this.httpOptions)
-  }
+  // public createAccount(account: Account): Observable<Account>{
+  //   return this.http.post<Account>(this.accountUrl, JSON.stringify(account), this.httpOptions)
+  // }
 
 }

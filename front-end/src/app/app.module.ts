@@ -9,6 +9,7 @@ import {AccountComponent} from './components/account/account.component';
 import {AddCustomerComponent} from './components/customer/create/add-customer/add-customer.component';
 import {YesNoPipe} from "./yes-no.pipe";
 import {FormsModule} from "@angular/forms";
+import { AddOperationComponent } from './components/operation/add-operation/add-operation.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule} from "@angular/forms";
     YesNoPipe,
     AddCustomerComponent,
     YesNoPipe,
-    YesNoPipe
+    YesNoPipe,
+    AddOperationComponent
 
   ],
   imports: [

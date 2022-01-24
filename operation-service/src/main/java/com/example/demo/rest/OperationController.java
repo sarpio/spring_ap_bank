@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 @RequestMapping("/api/operation")
 public class OperationController {
@@ -28,8 +28,8 @@ public class OperationController {
     public ResponseEntity<List<OperationDTO>> getAccountOperations(@Valid @PathVariable("id") Long id) {
         return ResponseEntity.ok(operationService.getListOfTransactionByAccountId(id));
     }
-
-    @DeleteMapping("/delete/{id}")
+    @CrossOrigin(origins = "*")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteOperationById(@Valid @PathVariable("id") Long id) {
         return ResponseEntity.ok(operationService.cancelOperationById(id));
     }

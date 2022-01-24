@@ -2,7 +2,7 @@
   <h1>{{title}}</h1>
 </div>
 &nbsp;
-&nbsp;<div class="container justify-content-center col-6 m-auto">
+&nbsp;<div class="container justify-content-center col-8 m-auto">
 <table class="table table-striped">
   <thead class="table-dark">
   <tr>
@@ -31,8 +31,10 @@
 <!--      <div *ngFor="let account of customer.accounts" class="t-right text-center">-->
 <!--        {{account.isForeign | yesNo}}-->
 <!--      </div>-->
-      <button class="btn-sm btn-info">Edit</button>
-
+      <div class="row justify-content-end m-1">
+      <button class="btn-sm btn-info">Edit</button>&nbsp;&nbsp;
+      <button class="btn-sm btn-danger">Delete</button>
+      </div>
     </td>
   </tr>
   </tbody>
