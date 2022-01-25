@@ -19,9 +19,8 @@ public class OperationController {
     private final OperationService operationService;
 
     @PostMapping
-    public ResponseEntity<OperationDTO> createNewOperation(@Valid @RequestBody OperationDTO dto,
-                                                           @Valid @RequestParam Type type) {
-    return ResponseEntity.ok(operationService.addNewOperation(dto, type));
+    public ResponseEntity<OperationDTO> createNewOperation(@RequestBody OperationDTO dto) {
+    return ResponseEntity.ok(operationService.addNewOperation(dto));
     }
 
     @GetMapping("/{id}")

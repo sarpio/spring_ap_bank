@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable, retry} from "rxjs";
-import {Operation} from "../model/operation";
+import {catchError, Observable, throwError} from "rxjs";
+import {Operation} from "../model/Operation";
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +20,21 @@ export class OperationsService {
   }
 
   addOperation(operation: Operation): Observable<Operation> {
-    return this.http.post<Operation>(this.operationUrl, operation, this.httpOptions)
+    return this.http.post<Operation>(this.operationUrl, operation, this.httpOptions);
   }
 
-  deleteOperation(id: number) {
-    this.http.delete<void>(`${this.operationUrl}/${id}`, this.httpOptions).subscribe(res=>{
-      console.log(`Operation with id: ${id} has been deleted`)
-    })
+  deleteOperation(id: number| undefined) {
+    // @ts-ignore
+    return this.http.delete<void>(`${this.operationUrl}/${id}`, {responseType: 'text'}).pipe(catchError(this.errorHandler));
+  }
+
+  errorHandler(error:any) {
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(errorMessage);
   }
 }

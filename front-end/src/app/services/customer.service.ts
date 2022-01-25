@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Customer} from "../model/customer";
-import {Account} from "../model/account";
+import {catchError, Observable, throwError} from "rxjs";
+import {Customer} from "../model/Customer";
+import {Account} from "../model/Account";
 
 @Injectable({
   providedIn: 'root'
@@ -30,11 +30,22 @@ export class CustomerService {
   }
 
   public addCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.customerUrl, JSON.stringify(customer), this.httpOptions)
+    return this.http.post<Customer>(this.customerUrl, JSON.stringify(customer), this.httpOptions);
   }
 
-  // public createAccount(account: Account): Observable<Account>{
-  //   return this.http.post<Account>(this.accountUrl, JSON.stringify(account), this.httpOptions)
-  // }
+  public deleteCustomerById(id: number) {
+    // @ts-ignore
+    return this.http.delete<void>(`${this.customerUrl}/${id}`, {responseType: 'text'})
+      .pipe(catchError(this.errorHandler));
+  }
 
+  errorHandler(error: any) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(errorMessage);
+  }
 }

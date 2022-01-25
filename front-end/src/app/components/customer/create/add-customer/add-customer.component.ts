@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CustomerService} from "../../../../services/customer.service";
 import {NgForm} from "@angular/forms";
 import {AccountService} from "../../../../services/account.service";
-import {Account} from "../../../../model/account";
+import {Account} from "../../../../model/Account";
 
 
 // import {Account} from "../../../../model/account";
@@ -44,6 +44,7 @@ export class AddCustomerComponent implements OnInit {
         isForeign:0,
         balance:0
       }
+      console.log(a)
       this.accountService.createAccount(a)
         .subscribe(
           res => {

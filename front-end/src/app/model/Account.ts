@@ -1,4 +1,4 @@
-import {Operation} from "./operation";
+import {Operation} from "./Operation";
 
 export interface Account {
   id?: number;

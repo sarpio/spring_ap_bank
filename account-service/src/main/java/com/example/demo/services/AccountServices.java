@@ -38,7 +38,7 @@ public class AccountServices {
 
     public AccountDTO findAccountById(Long id) {
 //        AccountDTO accountDTO = accountCache.getAccount(id).orElseGet(() -> accountRepository
-        AccountDTO accountDTO =  accountRepository
+        AccountDTO accountDTO = accountRepository
                 .findById(id)
                 .map(EntityDtoMapper::map)
                 .orElseThrow(
@@ -51,7 +51,6 @@ public class AccountServices {
     }
 
     public AccountDTO createAccount(AccountDTO dto) {
-//        dto.setCurrency(currency);
         if (isNumberExists(dto.getAccountNumber()) || dto.getAccountNumber() == null) {
             dto.setAccountNumber(setAccountNumber());
             System.err.println("Detected duplicated number or number is missing. Account number generated automatically");
@@ -64,31 +63,31 @@ public class AccountServices {
     }
 
     public String deleteAccountById(Long id) {
-        boolean present = accountRepository.findById(id).isPresent();
-        if (present) {
+        Account account = accountRepository.findById(id).orElseThrow(
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Cannot remove account because given id not exists"));
+        if (account.getBalance()!=0){
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Cannot remove account if balance in not 0");
+        }
             accountCache.deleteAccountFromCache(id);
             accountRepository.deleteById(id);
             return "Account removed";
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cannot remove account because given id not exists");
-        }
     }
 
     public List<AccountDTO> findByCustomerId(Long customerId) {
 //        if (accountCache.getAccountByCustomerId(customerId).isEmpty()) {
-            List<Account> accounts = accountRepository.findByCustomerId(customerId);
-            if (accounts.size() == 0) {
+        List<Account> accounts = accountRepository.findByCustomerId(customerId);
+            /*if (accounts.size() == 0) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found customer with given id");
-            }
-            List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
-            for (AccountDTO dto : accountDTOS) {
-                dto.setOperations(operationFeignClient.getAllCustomerAccountsByAccountId(dto.getId()));
-            }
-            return accountDTOS;
+            }*/
+        List<AccountDTO> accountDTOS = accounts.stream().map(EntityDtoMapper::map).collect(Collectors.toList());
+        for (AccountDTO dto : accountDTOS) {
+            dto.setOperations(operationFeignClient.getAllCustomerAccountsByAccountId(dto.getId()));
+        }
+        return accountDTOS;
 //        } else {
 //            return accountCache.getAccountByCustomerId(customerId);
 //        }
-
     }
 
     public Long setAccountNumber() {

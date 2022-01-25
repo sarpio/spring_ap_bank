@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Account} from "../../model/account";
+import {Account} from "../../model/Account";
 import {AccountService} from "../../services/account.service";
 import {CustomerService} from "../../services/customer.service";
 import {ActivatedRoute} from "@angular/router";
-import {Customer} from "../../model/customer";
+import {Customer} from "../../model/Customer";
+import {Operation} from "../../model/Operation";
 import {OperationsService} from "../../services/operations.service";
 
 @Component({
@@ -14,7 +15,7 @@ import {OperationsService} from "../../services/operations.service";
 export class AccountComponent implements OnInit {
   title = 'Accounts Information';
   accounts!: Account[];
-  operations!: any;
+  operations: any = [];
   account!: Account;
   customer!: Customer;
   customerName: string = '';
@@ -54,7 +55,6 @@ export class AccountComponent implements OnInit {
   }
 
 
-
   getBalance() {
     if (this.operations !== null) {
       let range = this.operations.length;
@@ -64,10 +64,20 @@ export class AccountComponent implements OnInit {
     }
   }
 
-  deleteOperation(id: any){
-    console.log('Requested delete operation with id: ', id)
-      this.operationService.deleteOperation(id)
+  deleteOperation(operation: Operation) {
+    this.operationService.deleteOperation(operation.id).subscribe(() => {
+    });
+    this.operations = this.operations.filter((o: Operation) => o !== operation)
   }
+
+  deleteById(id: number) {
+    this.operationService.deleteOperation(id).subscribe(res => {
+    });
+    this.operations = this.operations.filter((item: { id: number; }) => item.id !== id);
+    console.info(`Operation with id: ${id} has been cancelled`);
+  }
+
+
 }
 
 

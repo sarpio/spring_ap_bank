@@ -27,11 +27,11 @@ public class OperationService {
     public final AccountWebService accountWebService;
     public final OperationCache operationCache;
 
-    public OperationDTO addNewOperation(OperationDTO dto, Type type) {
+    public OperationDTO addNewOperation(OperationDTO dto) {
         Double balance = Objects.requireNonNull(accountWebService.getAccount(dto.getAccountId()).block()).getBalance();
         Double value;
-        dto.setType(type);
-        if (type.equals(Type.EXPENSE)) {
+
+        if (dto.getType().equals(Type.EXPENSE)) {
             value = -Math.abs(dto.getValue());
         } else {
             value = Math.abs(dto.getValue());

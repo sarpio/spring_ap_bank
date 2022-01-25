@@ -1,32 +1,32 @@
-<div class="container-lg text-center justify-content-center">
+<div class="container-lg text-center justify-content-center m-3">
+  <form #form=ngForm (ngSubmit)="onSubmit(form)" class="form-control form-control-sm justify-content-center m-auto">
   <h1> Register new client with account</h1>
-  <form #form=ngForm (ngSubmit)="onSubmit(form)" class="align-content-center m-auto">
-    <div class="row mb-3">
-      <label for="name" class="col-sm-2 col-form-label">Customer name:</label>
-      <div class="col-sm-5">
-        <input type="text" class="form-control" id="name" name="name" ngModel [(ngModel)]="customerName">
+    <div class="row mb-3 justify-content-center">
+      <label for="name" class="col-sm-2 col-form-label text-sm-end">Customer name:</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control form-control-sm" id="name" name="name" ngModel [(ngModel)]="customerName">
       </div>
     </div>
 
-    <div class="row mb-3">
-      <label for="accountNumber" class="col-sm-2 col-form-label">Account number:</label>
-      <div class="col-sm-5">
-        <input type="number" class="form-control" id="accountNumber" name="AccountNumber" ngModel
+    <div class="row mb-3 justify-content-center">
+      <label for="accountNumber" class="col-sm-2 col-form-label text-sm-end">Account number:</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control form-control-sm" id="accountNumber" name="AccountNumber" ngModel
                [(ngModel)]="accountNumber">
       </div>
     </div>
 
-    <div class="row mb-3">
-      <label for="currency" class="col-sm-2 col-form-label">Currency: </label>
-      <div class="col-sm-5">
-        <select class="form-select" id="currency" name="currency" [(ngModel)]="currency">
+    <div class="row mb-3 justify-content-center">
+      <label for="currency" class="col-sm-2 col-form-label text-sm-end">Currency: </label>
+      <div class="col-sm-2">
+        <select class="form-select form-select-sm" id="currency" name="currency" [(ngModel)]="currency">
           <option selected disabled>Choose ...</option>
           <option value="PLN">PLN</option>
-          <option value="PLN">USD</option>
-          <option value="PLN">EUR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
         </select>
       </div>
     </div>
-    <button class="btn btn-primary">Submit</button>
+    <button class="btn-sm btn-primary mb-3">Submit</button>
   </form>
 </div>

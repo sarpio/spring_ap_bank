@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, retry} from "rxjs";
-import {Account} from "../model/account";
+import {Account} from "../model/Account";
 
 const accountUrl = 'http://localhost:8100/api/account';
 
@@ -28,6 +28,10 @@ export class AccountService {
 
   createAccount(account: Account): Observable<Account>{
     return this.http.post<Account>(accountUrl, account, this.httpOptions);
+  }
+
+  getCustomerAccounts(id: number): Observable<Account[]> {
+    return this.http.get<Account[]>(`${accountUrl}/customer/${id}`).pipe(retry(1))
   }
 
 }

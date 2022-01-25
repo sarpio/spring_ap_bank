@@ -3,9 +3,9 @@
 </div>
 &nbsp;
 &nbsp;<div class="container justify-content-center col-8 m-auto">
-<table class="table table-striped">
-  <thead class="table-dark">
-  <tr>
+<table class="table table-sm table-striped">
+  <thead class="table-dark p-3">
+  <tr class="m-3">
     <th class="text-end">No</th>
     <th class="text-center">Customer Name</th>
     <th class="text-center">Accout numbers</th>
@@ -18,11 +18,11 @@
     <td class="t-top text-end">{{customer.id}}</td>
     <td class="t-top t-center">{{customer.name}}</td>
     <td class="text-center">
-      <div class="link-dark text-decoration-none" *ngFor="let account of customer.accounts" routerLink="/account/{{account.id}}">
+      <div class="link-dark text-decoration-none fw-bold" *ngFor="let account of customer.accounts" routerLink="/account/{{account.id}}">
        <a > {{account.accountNumber}}</a>
       </div>
     </td>
-    <td class="text-end">
+    <td class="text-sm-end">
       <div *ngFor="let account of customer.accounts" class="t-right">
         {{account.balance | number: '1.2'}} {{account.currency}}
       </div>
@@ -32,8 +32,10 @@
 <!--        {{account.isForeign | yesNo}}-->
 <!--      </div>-->
       <div class="row justify-content-end m-1">
-      <button class="btn-sm btn-info">Edit</button>&nbsp;&nbsp;
-      <button class="btn-sm btn-danger">Delete</button>
+      <button class="btn btn-sm btn-info" hidden>Edit</button>&nbsp;&nbsp;
+        <ng-container *ngFor="let account of customer.accounts">
+      <button class="btn btn-sm btn-danger" (click)="deleteCustomerById(customer)" *ngIf="account.balance==0">Delete</button>
+        </ng-container>
       </div>
     </td>
   </tr>
