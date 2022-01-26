@@ -1,6 +1,6 @@
 <h1 class="text-center">{{title}}</h1>
 <div class="container">
-  <div class="col-sm-3">
+  <div class="col-sm-5">
 
     <table class="table table-borderless">
       <tr class="m-3">
@@ -12,7 +12,7 @@
         <td class="text-end">{{customerName}}</td>
       </tr>
       <tr class="m-3">
-        <td class="text-end pe-5 fw-bold mt-2">Account balance:</td>
+        <td class="text-end pe-5 fw-bold mt-2">Account balance (back-end record):</td>
         <td class="text-end">{{balance| currency:'':'':'0.2-2':''}}</td>
       </tr>
       <tr class="m-3" style="line-height: 50px;">
@@ -47,7 +47,7 @@
     </tr>
     </tbody>
   </table>
-  <p>Verified balance: {{balance| currency:'':'':'0.2-2':''}} {{currency}}</p>
+  <p>Verified balance (front-end on fly): {{balance| currency:'':'':'0.2-2':''}} {{currency}}</p>
 </div>
 
 
