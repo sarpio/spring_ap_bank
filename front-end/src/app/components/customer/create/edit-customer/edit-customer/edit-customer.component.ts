@@ -12,10 +12,11 @@ import {Account} from "../../../../../model/Account";
 })
 export class EditCustomerComponent implements OnInit {
 
-  customer!: Customer;
+  public customer!: Customer;
   accounts: Account[] = [];
   account!: Account;
   customerId!: number;
+  customerName!: string;
 
   constructor(private accountService: AccountService,
               private customerService: CustomerService,
@@ -31,14 +32,14 @@ export class EditCustomerComponent implements OnInit {
 
   getCustomerById(customerId: number) {
     return this.customerService.getCustomerById(customerId).subscribe(res => {
-      this.customer = res;
+      this.customerName = res.name;
     });
   }
 
   getAccountByCustomerId(id: number) {
     return this.accountService.getCustomerAccounts(this.customerId).subscribe(res => {
       this.accounts = res;
-      console.log(this.accounts)
+
     })
   }
 }
