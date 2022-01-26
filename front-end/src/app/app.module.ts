@@ -11,6 +11,7 @@ import {YesNoPipe} from "./yes-no.pipe";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AddOperationComponent } from './components/operation/add-operation/add-operation.component';
 import { AddAccountComponent } from './components/account/add/add-account/add-account.component';
+import { EditCustomerComponent } from './components/customer/create/edit-customer/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddAccountComponent } from './components/account/add/add-account/add-ac
     AddCustomerComponent,
     YesNoPipe,
     AddOperationComponent,
-    AddAccountComponent
+    AddAccountComponent,
+    EditCustomerComponent
 
   ],
   imports: [

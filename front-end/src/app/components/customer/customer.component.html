@@ -2,43 +2,54 @@
   <h1>{{title}}</h1>
 </div>
 &nbsp;
-&nbsp;<div class="container justify-content-center col-8 m-auto">
-<table class="table table-sm table-striped">
-  <thead class="table-dark p-3">
-  <tr class="m-3">
-    <th class="text-end">No</th>
-    <th class="text-center">Customer Name</th>
-    <th class="text-center">Accout numbers</th>
-    <th class="text-end">Account balance</th>
-    <th class="text-center">Operations</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let customer of customers">
-    <td class="t-top text-end">{{customer.id}}</td>
-    <td class="t-top t-center">{{customer.name}}</td>
-    <td class="text-center">
-      <div class="link-dark text-decoration-none fw-bold" *ngFor="let account of customer.accounts" routerLink="/account/{{account.id}}">
-       <a > {{account.accountNumber}}</a>
-      </div>
-    </td>
-    <td class="text-sm-end">
-      <div *ngFor="let account of customer.accounts" class="t-right">
-        {{account.balance | number: '1.2'}} {{account.currency}}
-      </div>
-    </td>
-    <td>
-<!--      <div *ngFor="let account of customer.accounts" class="t-right text-center">-->
-<!--        {{account.isForeign | yesNo}}-->
-<!--      </div>-->
-      <div class="row justify-content-end m-1">
-      <button class="btn btn-sm btn-info" hidden>Edit</button>&nbsp;&nbsp;
-        <ng-container *ngFor="let account of customer.accounts">
-      <button class="btn btn-sm btn-danger" (click)="deleteCustomerById(customer)" *ngIf="account.balance==0">Delete</button>
-        </ng-container>
-      </div>
-    </td>
-  </tr>
-  </tbody>
-</table>
+&nbsp;
+<div class="container justify-content-center col-8 m-auto">
+  <table class="table table-sm table-striped mx-auto">
+    <thead class="table-dark p-3">
+    <tr class="m-3">
+      <th class="text-end">No</th>
+      <th class="text-center">Customer Name</th>
+      <th class="text-center">Account numbers</th>
+      <th class="text-end">Account balance</th>
+<!--      <th class="text-center">Operations</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers">
+      <td class="t-top text-end">{{customer.id}}</td>
+      <td class="t-top t-center" routerLink="/edit-customer/{{customer.id}}" style="cursor: pointer;">
+        {{customer.name}}
+      </td>
+      <td class="text-center" >
+        <div class="link-dark text-decoration-none fw-bold" *ngFor="let account of customer.accounts"
+             routerLink="/account/{{account.id}}">
+          <a> {{account.accountNumber}}</a>
+        </div>
+      </td>
+      <td class="text-sm-end">
+        <div *ngFor="let account of customer.accounts" class="t-right">
+          {{account.balance | number: '1.2'}} {{account.currency}}
+        </div>
+      </td>
+<!--      <td>-->
+<!--        &lt;!&ndash;      <div *ngFor="let account of customer.accounts" class="t-right text-center">&ndash;&gt;-->
+<!--        &lt;!&ndash;        {{account.isForeign | yesNo}}&ndash;&gt;-->
+<!--        &lt;!&ndash;      </div>&ndash;&gt;-->
+<!--        <div class="row justify-content-end m-1">-->
+<!--          <button class="btn btn-sm btn-info">Edit</button>&nbsp;&nbsp;-->
+<!--          <ng-container *ngFor="let account of customer.accounts">-->
+<!--            <button class="btn btn-sm btn-danger" (click)="deleteCustomerById(customer)" *ngIf="account.balance==0">-->
+<!--              Delete-->
+<!--            </button>-->
+<!--          </ng-container>-->
+<!--          <ng-container *ngFor="let account of customer.accounts">-->
+<!--            <button class="btn btn-sm btn-danger" disabled *ngIf="account.balance!=0">Delete</button>-->
+<!--            <br>-->
+<!--          </ng-container>-->
+
+<!--        </div>-->
+<!--      </td>-->
+    </tr>
+    </tbody>
+  </table>
 </div>

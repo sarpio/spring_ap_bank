@@ -1,1 +1,34 @@
-<h1>Add Account to existing Customer</h1>
+<div class="container-lg text-center justify-content-center m-3">
+  <form class="form-control form-control-sm justify-content-center m-auto" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1> Add new account</h1>
+
+    <div class="row mb-3 justify-content-center">
+      <label class="col-sm-2 col-form-label text-sm-end">Customer Name:</label>
+      <div class="col-sm-2">
+        <select class="form-select form-select-sm" name="customerName" formControlName="customerId" type="number">
+          <option  type="number" *ngFor="let customer of customers" [value]=customer.id>{{customer.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mb-3 justify-content-center">
+      <label for="currency" class="col-sm-2 col-form-label text-sm-end">Currency:</label>
+      <div class="col-sm-2">
+        <select class="form-select form-select-sm" id="currency" name="currency" formControlName="currency" type="text">
+          <option selected readonly >Choose ...</option>
+          <option value="PLN">PLN</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <label for="currency" class="col-sm-2 col-form-label text-sm-end">Account number:</label>
+      <div class="col-sm-2">
+        <input class="form-control form-control-sm" type="number" formControlName="accountNumber">
+<!--        <p class="text-danger"><small><i>Optional</i></small></p>-->
+      </div>
+    </div>
+    <button class="btn btn-sm btn-primary mb-3 px-5">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+
+<div class="container-sm w-auto mx-5">
+  <h1 class="mt-4">Account owner: {{customer.name}}</h1>
+<table class="table table-hover mt-5">
+  <thead class="table table-dark">
+  <tr>
+    <td class="text-center">No</td>
+    <td class="text-center">Account number</td>
+    <td class="text-center">Account balance</td>
+    <td class="text-center">Account operations</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let account of accounts">
+    <td class="text-center">{{account.id}}</td>
+    <td class="text-center">{{account.accountNumber}}</td>
+    <td class="text-center">{{account.balance}}</td>
+    <td class="text-center">
+        <button [disabled]="account.balance!=0" class="btn btn-sm btn-danger">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>

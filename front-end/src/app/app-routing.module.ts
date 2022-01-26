@@ -5,13 +5,17 @@ import {AccountComponent} from "./components/account/account.component";
 import {AddCustomerComponent} from "./components/customer/create/add-customer/add-customer.component";
 import {CommonModule} from "@angular/common";
 import {AddOperationComponent} from "./components/operation/add-operation/add-operation.component";
+import {AddAccountComponent} from "./components/account/add/add-account/add-account.component";
+import {EditCustomerComponent} from "./components/customer/create/edit-customer/edit-customer/edit-customer.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'/customers', pathMatch: 'full'},
   {path: 'customers', component: CustomerComponent},
   {path: 'account/:id', component: AccountComponent},
   {path: 'add-customer', component: AddCustomerComponent},
-  {path: 'add-operation', component: AddOperationComponent}
+  {path: 'add-operation', component: AddOperationComponent},
+  {path: 'add-account', component: AddAccountComponent},
+  {path: 'edit-customer/:id', component: EditCustomerComponent}
 ]
 
 @NgModule({
