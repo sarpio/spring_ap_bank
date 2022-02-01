@@ -1,6 +1,5 @@
 package com.example.demo.rest;
 
-import com.example.demo.entity.Type;
 import com.example.demo.rest.dto.OperationDTO;
 import com.example.demo.services.OperationService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +18,7 @@ public class OperationController {
     private final OperationService operationService;
 
     @PostMapping
-    public ResponseEntity<OperationDTO> createNewOperation(@RequestBody OperationDTO dto) {
+    public ResponseEntity<OperationDTO> createNewOperation(@RequestBody @Valid OperationDTO dto) {
     return ResponseEntity.ok(operationService.addNewOperation(dto));
     }
 

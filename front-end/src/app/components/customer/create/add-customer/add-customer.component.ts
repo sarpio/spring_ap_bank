@@ -63,17 +63,3 @@ export class Customer {
     this.name = name;
   }
 }
-
-// export class Account {
-//   accountNumber: number;
-//   customerId: number;
-//   currency: string;
-//
-//
-//   constructor(accountNumber: number, customerId: number, currency: string) {
-//     this.accountNumber = accountNumber;
-//     this.customerId = customerId;
-//     this.currency = currency;
-//
-//   }
-// }

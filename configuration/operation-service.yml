@@ -3,6 +3,8 @@ spring:
     url: jdbc:mysql://localhost:3306/sarpio_transaction
     username: AnatoliiHamza
     password: 123Anatolii
+  application:
+    name: operation-service
   jpa:
     hibernate:
       ddl-auto: update
@@ -11,13 +13,9 @@ spring:
     database-platform: "org.hibernate.dialect.MySQL8Dialect"
   liquibase:
     change-log: 'classpath:liquibase/liquibase-changeLog.xml'
-
 eureka:
-  client:
-    service-url:
-      defaultZone=http://localhost:8761/eureka/
   instance:
-    instance-id: ${spring.application.name}:${random.uuid}
+    instance-id: ${spring.application.name}:${server.port}
 management:
   endpoints:
     web:
@@ -26,6 +24,5 @@ management:
 springdoc:
   swagger-ui:
     path: /sw
-
 
 

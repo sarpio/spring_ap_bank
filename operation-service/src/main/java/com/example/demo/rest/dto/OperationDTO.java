@@ -10,6 +10,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -21,15 +22,14 @@ public class OperationDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
 
-    @NotNull@NotEmpty@Positive
+    @NotNull@Positive
     private Long accountId;
 
     @Min(1000)@Max(9999)
     private Long foreignAccount;
 
-    @PastOrPresent
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private LocalDateTime transactionDate;
+    private String transactionDate;
 
     @Min(1/10)
     private double value;

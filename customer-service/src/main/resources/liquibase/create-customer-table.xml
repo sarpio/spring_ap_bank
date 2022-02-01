@@ -8,7 +8,9 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="name" type="varchar(250)"/>
+            <column name="name" type="varchar(250)">
+                <constraints unique="true"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

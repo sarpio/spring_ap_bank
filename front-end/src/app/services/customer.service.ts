@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
 import {Customer} from "../model/Customer";
-import {Account} from "../model/Account";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,6 @@ export class CustomerService {
     })
   }
 
-  accountUrl = 'http://localhost:8100/api/account/';
   customerUrl = 'http://localhost:8200/api/customer/';
 
   constructor(private http: HttpClient) {
@@ -35,12 +33,12 @@ export class CustomerService {
 
   public deleteCustomerById(id: number) {
     // @ts-ignore
-    return this.http.delete<void>(`${this.customerUrl}/${id}`, {responseType: 'text'})
+    return this.http.delete<void>(`${this.customerUrl}/${id}`, this.httpTextResponse)
       .pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: any) {
-    let errorMessage = '';
+    let errorMessage;
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
     } else {

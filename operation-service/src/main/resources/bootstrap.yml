@@ -11,6 +11,9 @@ spring:
     config:
       uri: http://localhost:8888
       profile: default
+  mvc:
+    format:
+      date-time: dd-MM-yyyy HH:mm:ss
 management:
   endpoints:
     web:
@@ -22,8 +25,16 @@ management:
 eureka:
   instance:
     prefer-ip-address: true
+    hostname: localhost
   client:
+    enabled: true
     fetch-registry: true
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 10000

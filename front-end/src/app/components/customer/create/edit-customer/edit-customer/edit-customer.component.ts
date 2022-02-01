@@ -39,7 +39,13 @@ export class EditCustomerComponent implements OnInit {
   getAccountByCustomerId(id: number) {
     return this.accountService.getCustomerAccounts(this.customerId).subscribe(res => {
       this.accounts = res;
-
     })
+  }
+
+  deleteAccountById(account: Account) {
+    this.accountService.deleteAccountById(account.id).subscribe(res => {
+      console.log(`Account with Id:${account.id} has been deleted`)
+    });
+    this.accounts = this.accounts.filter((a: Account)=> a != account)
   }
 }

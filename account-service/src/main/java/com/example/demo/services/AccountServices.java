@@ -21,7 +21,7 @@ public class AccountServices {
 
     private final AccountRepository accountRepository;
     private final OperationFeignClient operationFeignClient;
-    private final AccountCache accountCache;
+//    private final AccountCache accountCache;
 
     public List<AccountDTO> findAllAccounts() {
         List<AccountDTO> accountsDTO = accountRepository
@@ -45,20 +45,20 @@ public class AccountServices {
                         () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Provided id not exists")
                 );
         List<OperationDTO> operationDTOS = operationFeignClient.getAllCustomerAccountsByAccountId(id);
-        accountCache.saveAccountInCache(accountDTO);
+//        accountCache.saveAccountInCache(accountDTO);
         accountDTO.setOperations(operationDTOS);
         return accountDTO;
     }
 
     public AccountDTO createAccount(AccountDTO dto) {
-        if (isNumberExists(dto.getAccountNumber()) || dto.getAccountNumber() == null) {
+        if (isNumberDuplicated(dto.getAccountNumber()) || dto.getAccountNumber() == null) {
             dto.setAccountNumber(setAccountNumber());
             System.err.println("Detected duplicated number or number is missing. Account number generated automatically");
         }
         Account entity = EntityDtoMapper.map(dto);
         entity.setBalance(0.0);
         accountRepository.save(entity);
-        accountCache.saveAccountInCache(EntityDtoMapper.map(entity));
+//        accountCache.saveAccountInCache(EntityDtoMapper.map(entity));
         return EntityDtoMapper.map(entity);
     }
 
@@ -69,12 +69,13 @@ public class AccountServices {
         if (account.getBalance()!=0){
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Cannot remove account if balance in not 0");
         }
-            accountCache.deleteAccountFromCache(id);
+//            accountCache.deleteAccountFromCache(id);
             accountRepository.deleteById(id);
             return "Account removed";
     }
 
     public List<AccountDTO> findByCustomerId(Long customerId) {
+        //TODo Dodać wyjątek dla niestniejącego ID clienta
 //        if (accountCache.getAccountByCustomerId(customerId).isEmpty()) {
         List<Account> accounts = accountRepository.findByCustomerId(customerId);
             /*if (accounts.size() == 0) {
@@ -94,7 +95,7 @@ public class AccountServices {
         return (long) ((Math.random() * (9999 - 1000)) + 1000);
     }
 
-    private boolean isNumberExists(Long number) {
+    private boolean isNumberDuplicated(Long number) {
         Account byAccountNumber = accountRepository.findByAccountNumber(number);
         return byAccountNumber != null;
     }
@@ -103,7 +104,7 @@ public class AccountServices {
         if (accountRepository.existsById(dto.getId())) {
             Account account = EntityDtoMapper.map(dto);
             accountRepository.save(account);
-            accountCache.saveAccountInCache(dto);
+//            accountCache.saveAccountInCache(dto);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account with given id not exists");
         }

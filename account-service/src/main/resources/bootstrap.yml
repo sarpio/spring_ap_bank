@@ -20,19 +20,18 @@ management:
     shutdown:
       enabled: true
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
+    enabled: true
     fetch-registry: true
     register-with-eureka: true
-resilience4j:
-  circuitbreaker:
-    configs:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+feign:
+  client:
+    config:
       default:
-        registerHealthIndicator: true
-    instances:
-      detailsForCustomerSuppoerApp:
-        minimumNumberOfCalls: 5
-        faulureRateThreshold: 50
-        waitDurationInOpenState: 30000
-        permittedNumberOfCallsInHalfOpenState: 2
+        connectTimeout: 60000
+        readTimeout: 10000

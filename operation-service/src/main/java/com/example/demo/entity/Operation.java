@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -24,7 +25,7 @@ public class Operation {
     private Long foreignAccount;
 
     @Column(name = "transaction_date")
-    private LocalDateTime transactionDate;
+    private String transactionDate;
 
     @Column(name = "value")
     private double value;

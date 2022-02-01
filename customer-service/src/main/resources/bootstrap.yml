@@ -21,19 +21,18 @@ management:
       enabled: true
 eureka:
   client:
+    enabled: true
     fetch-registry: true
     register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+    hostname: localhost
 
 feign:
   client:
     config:
       default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: full
-    refresh-enabled: true
-  autoconfiguration:
-    jackson:
-      enabled: true
+        connectTimeout: 60000
+        readTimeout: 10000

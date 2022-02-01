@@ -25,7 +25,8 @@ export class OperationsService {
 
   deleteOperation(id: number| undefined) {
     // @ts-ignore
-    return this.http.delete<void>(`${this.operationUrl}/${id}`, {responseType: 'text'}).pipe(catchError(this.errorHandler));
+    return this.http.delete<void>(`${this.operationUrl}/${id}`, {responseType: 'text'})
+      .pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error:any) {

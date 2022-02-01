@@ -11,7 +11,6 @@
       <th class="text-center">Customer Name</th>
       <th class="text-center">Account numbers</th>
       <th class="text-end">Account balance</th>
-<!--      <th class="text-center">Operations</th>-->
     </tr>
     </thead>
     <tbody>
@@ -31,24 +30,6 @@
           {{account.balance | number: '1.2'}} {{account.currency}}
         </div>
       </td>
-<!--      <td>-->
-<!--        &lt;!&ndash;      <div *ngFor="let account of customer.accounts" class="t-right text-center">&ndash;&gt;-->
-<!--        &lt;!&ndash;        {{account.isForeign | yesNo}}&ndash;&gt;-->
-<!--        &lt;!&ndash;      </div>&ndash;&gt;-->
-<!--        <div class="row justify-content-end m-1">-->
-<!--          <button class="btn btn-sm btn-info">Edit</button>&nbsp;&nbsp;-->
-<!--          <ng-container *ngFor="let account of customer.accounts">-->
-<!--            <button class="btn btn-sm btn-danger" (click)="deleteCustomerById(customer)" *ngIf="account.balance==0">-->
-<!--              Delete-->
-<!--            </button>-->
-<!--          </ng-container>-->
-<!--          <ng-container *ngFor="let account of customer.accounts">-->
-<!--            <button class="btn btn-sm btn-danger" disabled *ngIf="account.balance!=0">Delete</button>-->
-<!--            <br>-->
-<!--          </ng-container>-->
-
-<!--        </div>-->
-<!--      </td>-->
     </tr>
     </tbody>
   </table>

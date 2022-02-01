@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerDTO dto) {
+    public ResponseEntity<CustomerDTO> createCustomer(@RequestBody @Valid CustomerDTO dto) {
         return ResponseEntity.ok(customerService.createCustomer(dto));
     }
 
@@ -37,7 +38,7 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CustomerDTO>updateCustomerById(@PathVariable Long id, @RequestBody CustomerDTO dto) {
+    public ResponseEntity<CustomerDTO>updateCustomerById(@PathVariable Long id, @RequestBody @Valid CustomerDTO dto) {
         return ResponseEntity.ok(customerService.updateCustomer(id, dto));
     }
 }

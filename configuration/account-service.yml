@@ -15,7 +15,7 @@ spring:
     change-log: 'classpath:liquibase/liquibase-changeLog.xml'
 eureka:
   instance:
-    instance-id: ${spring.application.name}:${random.uuid}
+    instance-id: ${spring.application.name}:${server.port}
 management:
   endpoints:
     web:

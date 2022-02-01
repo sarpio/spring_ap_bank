@@ -13,3 +13,9 @@ management:
     web:
       exposure:
         include: "*"
+info:
+  service-name: Eureka Service
+  service-version: v1.0
+eureka:
+  instance:
+    hostname: localhost

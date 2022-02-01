@@ -17,7 +17,7 @@ public class OperationDTO {
     @Min(1000)@Max(9999)
     private Long foreignAccount;
     @PastOrPresent
-    private LocalDateTime transactionDate;
+    private String transactionDate;
     @Min(1/10)
     private double value;
     private Type type;

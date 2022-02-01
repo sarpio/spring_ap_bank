@@ -1,3 +1,5 @@
+import {Time} from "@angular/common";
+
 export interface Operation {
 
   id?: number;

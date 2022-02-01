@@ -10,7 +10,7 @@
             </column>
             <column name="account_id" type="bigint"/>
             <column name="foreign_account" type="bigint"/>
-            <column name="transaction_date" type="datetime"/>
+            <column name="transaction_date" type="varchar(50)"/>
             <column name="value" type="double"/>
             <column name="type" type="varchar(10)"/>
         </createTable>

@@ -16,7 +16,7 @@
     <td class="text-center">{{account.accountNumber}}</td>
     <td class="text-center">{{account.balance}}</td>
     <td class="text-center">
-        <button [disabled]="account.balance!=0" class="btn btn-sm btn-danger">Delete</button>
+        <button [disabled]="account.balance!=0" class="btn btn-sm btn-danger" (click)="deleteAccountById(account)">Delete</button>
     </td>
   </tr>
   </tbody>

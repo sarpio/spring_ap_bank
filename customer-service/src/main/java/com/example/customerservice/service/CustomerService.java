@@ -6,6 +6,7 @@ import com.example.customerservice.repo.CustomerRepository;
 import com.example.customerservice.rest.dto.AccountDTO;
 import com.example.customerservice.rest.dto.CustomerDTO;
 import com.example.customerservice.util.EntityDtoMapper;
+import com.sun.xml.bind.v2.TODO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,7 @@ import java.util.stream.Collectors;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
-    private final AccountWebService accountWebService;
-    private final CustomerCache customerCache;
+//    private final CustomerCache customerCache;
     private final AccountFeignClient accountFeignClient;
 
     public List<CustomerDTO> findAll() {
@@ -50,13 +50,15 @@ public class CustomerService {
     public CustomerDTO createCustomer(CustomerDTO dto) {
         Customer customer = EntityDtoMapper.map(dto);
         Customer save = customerRepository.save(customer);
-        customerCache.saveCustomerInCache(EntityDtoMapper.map(save));
+        //TODO
+        // Sprawdzić czy nie duplikuje imienia
+//        customerCache.saveCustomerInCache(EntityDtoMapper.map(save));
         return EntityDtoMapper.map(save);
     }
 
     public String deleteCustomerById(Long id) {
         if (customerRepository.existsById(id)) {
-            customerCache.deleteCustomerFromCache(id);
+//            customerCache.deleteCustomerFromCache(id);
             customerRepository.deleteById(id);
             return String.format("Customer with ID:%s has been deleted", id);
         } else {
@@ -68,7 +70,7 @@ public class CustomerService {
         Customer entity = EntityDtoMapper.map(dto);
         entity.setId(id);
         customerRepository.save(entity);
-        customerCache.saveCustomerInCache(EntityDtoMapper.map(entity));
+//        customerCache.saveCustomerInCache(EntityDtoMapper.map(entity));
         return EntityDtoMapper.map(entity);
     }
 }
