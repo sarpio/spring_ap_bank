@@ -13,9 +13,17 @@ spring:
     database-platform: "org.hibernate.dialect.MySQL8Dialect"
   liquibase:
     change-log: 'classpath:liquibase/liquibase-changeLog.xml'
-#eureka:
-#  instance:
-#    instance-id: ${spring.application.name}:${server.port}
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    appname: operation-service
+  client:
+    enabled: true
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 management:
   endpoints:
     web:
