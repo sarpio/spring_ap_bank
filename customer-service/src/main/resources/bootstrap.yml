@@ -8,6 +8,9 @@ spring:
   application:
     name: customer-service
   cloud:
+    loadbalancer:
+      retry:
+        enabled: true
     config:
       uri: http://localhost:8888
       profile: default

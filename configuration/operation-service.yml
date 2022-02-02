@@ -13,9 +13,9 @@ spring:
     database-platform: "org.hibernate.dialect.MySQL8Dialect"
   liquibase:
     change-log: 'classpath:liquibase/liquibase-changeLog.xml'
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${server.port}
+#eureka:
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
 management:
   endpoints:
     web:

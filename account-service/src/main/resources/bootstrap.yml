@@ -3,11 +3,14 @@ server:
   error:
     include-message: always
 spring:
-  profiles:
-    active: default
   application:
     name: account-service
+  profiles:
+    active: default
   cloud:
+    loadbalancer:
+      retry:
+        enabled: true
     config:
       uri: http://localhost:8888
       profile: default
@@ -20,18 +23,16 @@ management:
     shutdown:
       enabled: true
 eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    appname: account-service
   client:
     enabled: true
     fetch-registry: true
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true
-    hostname: localhost
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 60000
-        readTimeout: 10000
+#  instance:
+#    prefer-ip-address: true
+#    hostname: localhost
