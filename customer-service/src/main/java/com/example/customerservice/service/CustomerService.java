@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,7 +31,11 @@ public class CustomerService {
                 .map(EntityDtoMapper::map)
                 .collect(Collectors.toList());
         for (CustomerDTO dto : customersDTO) {
+            try {
             dto.setAccounts(accountFeignClient.getCustomerAccounts(dto.getId()));
+            } catch (Exception e) {
+                dto.setAccounts(new ArrayList<>());
+            }
         }
         return customersDTO;
     }
@@ -41,9 +46,13 @@ public class CustomerService {
                 .findById(id)
                 .map(EntityDtoMapper::map)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found ID: " + id));
+        try {
         List<AccountDTO> accountDTOS = accountFeignClient.getCustomerAccounts(id);
-//        customerCache.saveCustomerInCache(customerDTO);
         customerDTO.setAccounts(accountDTOS);
+        } catch (Exception ex) {
+            customerDTO.setAccounts(new ArrayList<>());
+        }
+//        customerCache.saveCustomerInCache(customerDTO);
         return customerDTO;
     }
 
@@ -57,6 +66,10 @@ public class CustomerService {
     }
 
     public String deleteCustomerById(Long id) {
+        if (accountFeignClient.getCustomerAccounts(id)!=null) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "Cannot remove Customer if he has an account(s)");
+        }
+
         if (customerRepository.existsById(id)) {
 //            customerCache.deleteCustomerFromCache(id);
             customerRepository.deleteById(id);

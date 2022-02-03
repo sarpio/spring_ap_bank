@@ -25,8 +25,8 @@ eureka:
     prefer-ip-address: true
     appname: customer-service
   client:
-    enabled: true
     fetch-registry: true
     register-with-eureka: true
+    enabled: true
     service-url:
       defaultZone: http://localhost:8761/eureka/

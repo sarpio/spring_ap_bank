@@ -14,14 +14,14 @@ spring:
     config:
       uri: http://localhost:8888
       profile: default
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    shutdown:
-      enabled: true
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    shutdown:
+#      enabled: true
 eureka:
   instance:
     hostname: localhost

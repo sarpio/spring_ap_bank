@@ -29,6 +29,9 @@ management:
     web:
       exposure:
         include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
 springdoc:
   swagger-ui:
     path: /sw
