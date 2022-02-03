@@ -1,12 +1,12 @@
 package com.example.demo.rest.dto;
 
 import com.example.demo.entity.Currency;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.Column;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
@@ -23,11 +23,11 @@ public class AccountDTO {
     private Long accountNumber;
 
     @NotNull
-    @Min(1)
+    @Min(value = 1, message = "CustomerId must be above zero")
     private Long customerId;
 
     private Integer isForeign;
-    @NotNull
+    @NotNull(message = "Currency type must be selected from valid symbols")
     private Currency currency;
 
     private Double balance;

@@ -1,10 +1,8 @@
 package com.example.demo.entity;
 
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Data
 @Entity

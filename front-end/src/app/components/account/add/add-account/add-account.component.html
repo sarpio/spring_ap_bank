@@ -8,6 +8,8 @@
         <select class="form-select form-select-sm" name="customerName" formControlName="customerId" type="number">
           <option  type="number" *ngFor="let customer of customers" [value]=customer.id>{{customer.name}}</option>
         </select>
+        <div *ngIf="f['customerId'].touched && f['customerId'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+          <div *ngIf="f['customerId'].errors && f['customerId'].errors['required']">Customer must be selected</div></div>
       </div>
     </div>
 
@@ -20,6 +22,8 @@
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
         </select>
+        <div *ngIf="f['currency'].touched && f['currency'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+          <div *ngIf="f['currency'].errors && f['currency'].errors['required']">Currency must be selected</div></div>
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
@@ -29,6 +33,6 @@
 <!--        <p class="text-danger"><small><i>Optional</i></small></p>-->
       </div>
     </div>
-    <button class="btn btn-sm btn-primary mb-3 px-5">Submit</button>
+    <button class="btn btn-sm btn-primary mb-3 px-5" [disabled]="!form.valid">Submit</button>
   </form>
 </div>

@@ -3,8 +3,7 @@ import {AccountService} from "../../../../services/account.service";
 import {CustomerService} from "../../../../services/customer.service";
 import {Account} from "../../../../model/Account";
 import {ActivatedRoute} from "@angular/router";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Observable} from "rxjs";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Customer} from "../../../../model/Customer";
 
 @Component({
@@ -18,7 +17,6 @@ export class AddAccountComponent implements OnInit {
   account!: Account;
   customers: Customer[] = [];
   customer!: Customer;
-  // customerId!: number;
 
   constructor(private accountService: AccountService, private customerService: CustomerService, private route: ActivatedRoute) {
     // this.customerId = Number(this.route.snapshot.paramMap.get('id'));
@@ -33,21 +31,19 @@ export class AddAccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCustomers();
-    // this.form.value.customerId = this.customerId;
-    // this.getCustomerById(this.customerId);
     console.log(this.form.value)
   }
 
   private getAllCustomers() {
     return this.customerService.getAllCustomers().subscribe((res: Customer[]) => {
       this.customers = res;
-    })
+    });
   }
 
   private getCustomerById(id: number) {
     return this.customerService.getCustomerById(id).subscribe((res: Customer) => {
       this.customer = res;
-    })
+    });
   }
 
   onSubmit() {
@@ -59,5 +55,9 @@ export class AddAccountComponent implements OnInit {
       console.log(error.message)
       this.form.reset()
     })
+  }
+
+  get f() {
+    return this.form.controls;
   }
 }

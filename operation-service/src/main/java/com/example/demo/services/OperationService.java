@@ -2,7 +2,6 @@ package com.example.demo.services;
 
 import com.example.demo.entity.Operation;
 import com.example.demo.entity.Type;
-import com.example.demo.repo.OperationCache;
 import com.example.demo.repo.OperationRepository;
 import com.example.demo.rest.dto.AccountDTO;
 import com.example.demo.rest.dto.OperationDTO;
@@ -14,10 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service

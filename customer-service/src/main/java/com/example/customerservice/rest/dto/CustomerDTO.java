@@ -18,8 +18,8 @@ public class CustomerDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
     @Unique
-    @NotBlank
-    @NotNull
+    @NotBlank(message = "Customer name cannot be blank")
+    @NotNull(message = "Customer name cannot be null")
     private String name;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private List<AccountDTO> accounts;

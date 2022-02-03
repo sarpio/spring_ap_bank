@@ -14,8 +14,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let customer of customers">
-      <td class="t-top text-end">{{customer.id}}</td>
+    <tr *ngFor="let customer of customers; let i = index">
+      <td class="t-top text-end">{{i+1}}</td>
+
       <td class="t-top t-center" routerLink="/edit-customer/{{customer.id}}" style="cursor: pointer;">
         {{customer.name}}
       </td>

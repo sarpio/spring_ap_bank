@@ -2,33 +2,43 @@
 <form class="form-control form-control-sm mt-5" [formGroup]="form" (ngSubmit)="onSubmit()">
 <h1 class="text-center"> Add transaction to account</h1>
   <div class="row mb-3 mt-5 justify-content-center">
-    <label for="customer" class="col-sm-3 col-form-label text-end">Customer:</label>
+    <label class="col-sm-3 col-form-label text-end">Customer:</label>
     <div class="col-sm-2">
-      <select class="form-select form-select-sm" id="customer" (change)="getCustomerId($event)">
+      <select class="form-select form-select-sm" id="customerId" (change)="getCustomerId($event)">
         <option selected readonly>Select ...</option>
-        <option *ngFor="let customer of customers" [value]="customer.id">{{customer.name}}</option>
+        <option *ngFor="let customer of customers" [value]="customer.id" name="customer">{{customer.name}}</option>
       </select>
     </div>
   </div>
   <div class="row mb-3 justify-content-center">
-    <label for="customer" class="col-sm-3 col-form-label text-end">Account:</label>
+    <label class="col-sm-3 col-form-label text-end">Account:</label>
     <div class="col-sm-2">
       <select class="form-select form-select-sm" id="account" (change)="getBalance($event)" formControlName="accountId">
         <option selected readonly>Select ...</option>
         <option *ngFor="let account of accounts" [value]="account.id">{{account.accountNumber}}</option>
       </select>
+      <div *ngIf="f['accountId'].touched && f['accountId'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+        <div *ngIf="f['accountId'].errors && f['accountId'].errors['required']">Account must be selected</div>
+      </div>
     </div>
   </div>
   <div class="row mb-3 justify-content-center">
     <label for="foreignAccount" class="col-sm-3 col-form-label text-end">Foreign account No:</label>
     <div class="col-sm-2">
       <input type="number" [maxLength]="4" class="form-control form-control-sm" name="foreignAccount" id="foreignAccount" formControlName="foreignAccount">
+      <div *ngIf="f['foreignAccount'].touched && f['foreignAccount'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+        <div *ngIf="f['foreignAccount'].errors && f['foreignAccount'].errors['required']">Foreign Account must be provided</div>
+        <div *ngIf="f['foreignAccount'].errors && f['foreignAccount'].errors['min']">Foreign account must be 4 digits</div>
+      </div>
     </div>
   </div>
   <div class="row mb-3 justify-content-center">
     <label for="value" class="col-sm-3 col-form-label text-end">Value:</label>
     <div class="col-sm-2">
       <input type="number" class="form-control form-control-sm" name="value" id="value" formControlName="value">
+      <div *ngIf="f['value'].touched && f['value'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+        <div *ngIf="f['value'].errors && f['value'].errors['required']">Value must be provided</div>
+      </div>
     </div>
   </div>
   <div class="row mb-3 justify-content-center">
@@ -45,10 +55,13 @@
         <option value="EXPENSE">EXPENSE</option>
         <option value="INCOME">INCOME</option>
       </select>
+      <div *ngIf="f['type'].touched && f['type'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+        <div *ngIf="f['type'].errors && f['type'].errors['required']">Select operation type</div>
+      </div>
     </div>
   </div>
 <div class="row mb-3">
-  <button class="btn-sm btn-primary m-auto w-25" type="submit">Save</button>
-  <button class="btn-sm btn-warning m-auto w-25">Cancel</button>
+  <button class="btn btn-sm btn-primary m-auto w-25" type="submit" [disabled]="!form.valid">Save</button>
+  <button class="btn btn-sm btn-warning m-auto w-25" routerLink="/">Cancel</button>
 </div>
 </form>

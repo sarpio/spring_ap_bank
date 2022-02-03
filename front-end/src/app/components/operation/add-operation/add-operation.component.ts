@@ -25,7 +25,7 @@ export class AddOperationComponent implements OnInit {
 
   form = new FormGroup({
     accountId: new FormControl(null, [Validators.required]),
-    foreignAccount: new FormControl(null, [Validators.required, Validators.max(9999)]),
+    foreignAccount: new FormControl(null, [Validators.required, Validators.max(9999), Validators.min(1000)]),
     value: new FormControl(null, [Validators.required]),
     type: new FormControl('', [Validators.required, Validators.max(9999)]),
   });
@@ -96,6 +96,9 @@ export class AddOperationComponent implements OnInit {
     // Return an observable with a user-facing error message.
     return throwError(
       'Something bad happened; please try again later.');
+  }
+  get f() {
+    return this.form.controls;
   }
 
 }
