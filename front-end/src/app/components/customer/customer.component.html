@@ -32,7 +32,7 @@
         </div>
       </td>
       <td class="text-sm-end">
-        <button class="btn btn-sm btn-danger">Delete</button>
+        <button class="btn btn-sm btn-danger" [disabled]="customer.accounts?.length !==0" (click)="deleteCustomerById(customer)">Delete</button>
       </td>
     </tr>
     </tbody>

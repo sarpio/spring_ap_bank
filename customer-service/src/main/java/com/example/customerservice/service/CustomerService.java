@@ -84,9 +84,9 @@ public class CustomerService {
     }
 
     public String deleteCustomerById(Long id) {
-        if (accountFeignClient.getCustomerAccounts(id) != null) {
-            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "Cannot remove Customer if he has an account(s)");
-        }
+//        if (accountFeignClient.getCustomerAccounts(id) != null) {
+//            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "Cannot remove Customer if he has an account(s)");
+//        }
 
         if (customerRepository.existsById(id)) {
 //            customerCache.deleteCustomerFromCache(id);

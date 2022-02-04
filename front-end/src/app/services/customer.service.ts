@@ -14,7 +14,7 @@ export class CustomerService {
     })
   }
 
-  customerUrl = 'http://localhost:8200/api/customer/';
+  customerUrl = 'http://localhost:8200/api/customer';
 
   constructor(private http: HttpClient) {
   }
@@ -24,7 +24,7 @@ export class CustomerService {
   }
 
   public getCustomerById(id: number): Observable<Customer> {
-    return this.http.get<Customer>(this.customerUrl + id);
+    return this.http.get<Customer>(`${this.customerUrl}/${id}`);
   }
 
   public addCustomer(customer: Customer): Observable<Customer> {
@@ -33,7 +33,7 @@ export class CustomerService {
 
   public deleteCustomerById(id: number) {
     // @ts-ignore
-    return this.http.delete<void>(`${this.customerUrl}/${id}`, this.httpTextResponse)
+    return this.http.delete<void>(`${this.customerUrl}/${id}`, {responseType: 'text'})
       .pipe(catchError(this.errorHandler));
   }
 
@@ -42,7 +42,7 @@ export class CustomerService {
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
     } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error Code: ${error.status} Message: ${error.message}`;
     }
     return throwError(errorMessage);
   }

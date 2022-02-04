@@ -1,11 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from "../../../../services/customer.service";
-import {NgForm} from "@angular/forms";
-import {AccountService} from "../../../../services/account.service";
-import {Account} from "../../../../model/Account";
-
-
-// import {Account} from "../../../../model/account";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 
 @Component({
@@ -15,52 +10,22 @@ import {Account} from "../../../../model/Account";
 })
 export class AddCustomerComponent implements OnInit {
 
-  customerName: string = '';
-  accountNumber!: number;
-  currency!: string;
-  myCustomer: Customer = {
-    name: ''
+  constructor(private customerService: CustomerService) {
   }
 
-  myCustomerId: number = 0;
-
-  constructor(private customerService: CustomerService, private accountService: AccountService) {
-  }
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.min(3)]),
+    accountName: new FormControl(''),
+    currency: new FormControl('', [Validators.required])
+  })
 
   ngOnInit(): void {
   }
 
-  onSubmit(form: NgForm) {
-    this.myCustomer.name = this.customerName
-    console.log(this.myCustomer)
-    this.customerService.addCustomer(this.myCustomer).subscribe(res => {
-      this.myCustomerId = Number(res.id);
-      console.log("Customer id: ", this.myCustomerId)
-
-      let a: Account = {
-        accountNumber: Number(this.accountNumber),
-        customerId: Number(res.id),
-        currency: String(this.currency),
-        isForeign:0,
-        balance:0
-      }
-      console.log(a)
-      this.accountService.createAccount(a)
-        .subscribe(
-          res => {
-        console.log(res)
-      },
-          error => console.error(error))
+  onSubmit() {
+    console.log(this.form.value)
+    this.customerService.addCustomer(this.form.value).subscribe(res => {
+      console.log(res)
     });
   }
-}
-
-export class Customer {
-  name: string;
-
-  constructor(name: string) {
-    this.name = name;
-  }
-
-
 }

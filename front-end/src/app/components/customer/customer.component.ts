@@ -29,12 +29,13 @@ export class CustomerComponent implements OnInit {
 
   deleteCustomerById(customer: Customer) {
     if (customer.accounts?.length == 0) {
-      this.isAnyAccount = false;
-    } else {
       this.customerService.deleteCustomerById(Number(customer.id)).subscribe(res => {
-        console.info(`Customer with id: ${customer.id} has been deleted`);
+        console.info(`Customer with id: ${customer.accounts?.length} has been deleted`);
         this.customers = this.customers.filter((c: Customer) => c != customer)
       });
+    } else {
+      console.log("Cannot delete")
     }
+
   }
 }
