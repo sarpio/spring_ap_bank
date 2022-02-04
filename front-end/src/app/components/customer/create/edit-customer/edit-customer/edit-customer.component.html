@@ -13,7 +13,7 @@
   <tbody>
   <tr *ngFor="let account of accounts">
     <td class="text-center">{{account.id}}</td>
-    <td class="text-center">{{account.accountNumber}}</td>
+    <td class="text-center"><a class="link-dark text-decoration-none" routerLink="/account/{{account.id}}">{{account.accountNumber}}</a></td>
     <td class="text-center">{{account.balance}}</td>
     <td class="text-center">
         <button [disabled]="account.balance!=0" class="btn btn-sm btn-danger" (click)="deleteAccountById(account)">Delete</button>

@@ -17,13 +17,12 @@
     <tbody>
     <tr *ngFor="let customer of customers; let i = index">
       <td class="t-top text-end">{{i + 1}}</td>
-      <td class="t-top t-center" routerLink="/edit-customer/{{customer.id}}" style="cursor: pointer;">
-        {{customer.name}}
+      <td class="t-top t-center">
+        <a class="text-decoration-none link-dark" routerLink="/edit-customer/{{customer.id}}">{{customer.name}}</a>
       </td>
       <td class="text-center">
-        <div class="link-dark text-decoration-none fw-bold" *ngFor="let account of customer.accounts"
-             routerLink="/account/{{account.id}}">
-          <a> {{account.accountNumber}}</a>
+        <div class="link-dark text-decoration-none" *ngFor="let account of customer.accounts">
+          <a routerLink="/account/{{account.id}}" class="link-dark text-decoration-none">{{account.accountNumber}}</a>
         </div>
       </td>
       <td class="text-sm-end">
