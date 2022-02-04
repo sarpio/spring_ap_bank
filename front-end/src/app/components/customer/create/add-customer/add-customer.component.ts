@@ -15,7 +15,7 @@ import {Account} from "../../../../model/Account";
 })
 export class AddCustomerComponent implements OnInit {
 
-  customerName!: string;
+  customerName: string = '';
   accountNumber!: number;
   currency!: string;
   myCustomer: Customer = {
@@ -52,7 +52,6 @@ export class AddCustomerComponent implements OnInit {
       },
           error => console.error(error))
     });
-
   }
 }
 
@@ -62,4 +61,6 @@ export class Customer {
   constructor(name: string) {
     this.name = name;
   }
+
+
 }

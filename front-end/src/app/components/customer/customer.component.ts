@@ -12,6 +12,7 @@ export class CustomerComponent implements OnInit {
   title = "Customer Module"
   customers: Customer[] = [];
   accounts: Account[] = [];
+  isAnyAccount: boolean = true;
 
   constructor(private customerService: CustomerService) {
   }
@@ -27,9 +28,13 @@ export class CustomerComponent implements OnInit {
   }
 
   deleteCustomerById(customer: Customer) {
-    this.customerService.deleteCustomerById(Number(customer.id)).subscribe(res => {
-      console.info(`Customer with id: ${customer.id} has been deleted`);
-    });
-    this.customers = this.customers.filter((c: Customer) => c != customer)
+    if (customer.accounts?.length == 0) {
+      this.isAnyAccount = false;
+    } else {
+      this.customerService.deleteCustomerById(Number(customer.id)).subscribe(res => {
+        console.info(`Customer with id: ${customer.id} has been deleted`);
+        this.customers = this.customers.filter((c: Customer) => c != customer)
+      });
+    }
   }
 }

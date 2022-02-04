@@ -11,16 +11,16 @@
       <th class="text-center">Customer Name</th>
       <th class="text-center">Account numbers</th>
       <th class="text-end">Account balance</th>
+      <th class="text-center">Operations</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let customer of customers; let i = index">
-      <td class="t-top text-end">{{i+1}}</td>
-
+      <td class="t-top text-end">{{i + 1}}</td>
       <td class="t-top t-center" routerLink="/edit-customer/{{customer.id}}" style="cursor: pointer;">
         {{customer.name}}
       </td>
-      <td class="text-center" >
+      <td class="text-center">
         <div class="link-dark text-decoration-none fw-bold" *ngFor="let account of customer.accounts"
              routerLink="/account/{{account.id}}">
           <a> {{account.accountNumber}}</a>
@@ -30,6 +30,9 @@
         <div *ngFor="let account of customer.accounts" class="t-right">
           {{account.balance | number: '1.2'}} {{account.currency}}
         </div>
+      </td>
+      <td class="text-sm-end">
+        <button class="btn btn-sm btn-danger">Delete</button>
       </td>
     </tr>
     </tbody>
