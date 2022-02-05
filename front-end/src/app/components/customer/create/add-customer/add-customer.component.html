@@ -5,6 +5,10 @@
       <label for="name" class="col-sm-2 col-form-label text-sm-end">Customer name:</label>
       <div class="col-sm-2">
         <input type="text" class="form-control form-control-sm" id="name" name="name" formControlName="name">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+          <div *ngIf="f['name'].errors && f['name'].errors['required']">Customer name is required</div>
+          <div *ngIf="f['name'].errors && f['name'].errors['min']">Customer name must have at least 3 characters</div>
+        </div>
       </div>
     </div>
 
@@ -24,8 +28,11 @@
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
         </select>
+        <div *ngIf="f['currency'].touched && f['currency'].invalid" class="alert-danger small text-danger text-sm-start fst-italic">
+          <div *ngIf="f['currency'].errors && f['currency'].errors['required']">Select Currency</div>
+        </div>
       </div>
     </div>
-    <button class="btn-sm btn-primary mb-3">Submit</button>
+    <button class="btn-sm btn-primary mb-3" [disabled]="!form.valid">Submit</button>
   </form>
 </div>

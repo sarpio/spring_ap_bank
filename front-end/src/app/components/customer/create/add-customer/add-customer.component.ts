@@ -14,7 +14,7 @@ export class AddCustomerComponent implements OnInit {
   }
 
   form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.min(3)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     accountName: new FormControl(''),
     currency: new FormControl('', [Validators.required])
   })
@@ -27,5 +27,9 @@ export class AddCustomerComponent implements OnInit {
     this.customerService.addCustomer(this.form.value).subscribe(res => {
       console.log(res)
     });
+  }
+
+  get f() {
+    return this.form.controls
   }
 }
