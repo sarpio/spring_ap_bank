@@ -6,7 +6,6 @@
             <column name="id" value="1"/>
             <column name="account_number" value="1001"/>
             <column name="customer_id" value="1"/>
-            <column name="is_foreign" value="0"/>
             <column name="currency" value="PLN"/>
             <column name="balance" value="1376.57"/>
         </insert>
@@ -14,7 +13,6 @@
             <column name="id" value="2"/>
             <column name="account_number" value="1002"/>
             <column name="customer_id" value="2"/>
-            <column name="is_foreign" value="0"/>
             <column name="currency" value="PLN"/>
             <column name="balance" value="9076.9"/>
         </insert>
@@ -22,7 +20,6 @@
             <column name="id" value="3"/>
             <column name="account_number" value="1003"/>
             <column name="customer_id" value="3"/>
-            <column name="is_foreign" value="0"/>
             <column name="currency" value="PLN"/>
             <column name="balance" value="43480"/>
         </insert>

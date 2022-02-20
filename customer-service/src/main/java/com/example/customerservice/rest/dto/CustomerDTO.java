@@ -2,7 +2,6 @@ package com.example.customerservice.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-import org.checkerframework.common.aliasing.qual.Unique;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -17,11 +16,9 @@ public class CustomerDTO {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
-
-    @Unique
     @NotBlank(message = "Customer name cannot be blank")
     @NotNull(message = "Customer name cannot be null")
     private String name;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @NotNull(message = "Customer cannot exist without account")
     private List<AccountDTO> accounts;
 }

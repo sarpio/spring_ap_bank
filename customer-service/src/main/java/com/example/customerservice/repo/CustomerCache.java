@@ -19,7 +19,7 @@ public class CustomerCache {
 
     @CachePut(key = "#customerDto.id", cacheManager = CacheConfig.Customer_DTO_Cache_Manager,
             cacheNames = CacheConfig.Customer_DTO_Cache_Name)
-    public void saveCustomerInCache(CustomerDTO customerDto) {
+    public CustomerDTO saveCustomerInCache(CustomerDTO customerDto) { return customerDto;
     }
 
     @CacheEvict(key = "#id", cacheManager = CacheConfig.Customer_DTO_Cache_Manager,

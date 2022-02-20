@@ -12,4 +12,5 @@ public interface OperationRepository extends JpaRepository<Operation, Long> {
 
     @EntityGraph(type = EntityGraph.EntityGraphType.FETCH, attributePaths = "id")
     List<Operation> findByAccountId(Long id);
+
 }

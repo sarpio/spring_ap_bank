@@ -35,7 +35,7 @@ public class OperationDTO {
 
     @Min(value = 1, message = "Minimum value is 1")
     private double value;
-
+    @NotNull(message = "type cant be null")
     @Enumerated(EnumType.STRING)
     private Type type;
 }

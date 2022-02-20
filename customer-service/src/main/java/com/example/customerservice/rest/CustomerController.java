@@ -1,7 +1,6 @@
 package com.example.customerservice.rest;
 
 import com.example.customerservice.rest.dto.CustomerDTO;
-import com.example.customerservice.rest.dto.CustomerDTOPost;
 import com.example.customerservice.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,8 +28,8 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<CustomerDTOPost> createNewCustomer(@RequestBody @Valid CustomerDTOPost dto) {
-        return ResponseEntity.ok(customerService.createNewCustomer(dto));
+    public ResponseEntity<CustomerDTO> createNewCustomer(@RequestBody @Valid CustomerDTO dto) {
+        return ResponseEntity.ok(customerService.createCustomer(dto));
     }
 
     @DeleteMapping("/{id}")

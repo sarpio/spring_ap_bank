@@ -20,7 +20,8 @@ public class OperationCache {
 
     @CachePut(key = "#operationDTO.id", cacheManager = CacheConfig.Operation_DTO_Cache_Manager,
             cacheNames = CacheConfig.Operation_DTO_Cache_Name)
-    public void saveOperationInCache(OperationDTO operationDTO) {
+    public OperationDTO saveOperationInCache(OperationDTO operationDTO) {
+        return operationDTO;
     }
 
     @CacheEvict(key = "#id", cacheManager = CacheConfig.Operation_DTO_Cache_Manager,

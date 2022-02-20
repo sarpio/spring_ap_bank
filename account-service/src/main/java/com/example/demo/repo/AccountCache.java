@@ -7,8 +7,6 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -19,15 +17,9 @@ public class AccountCache {
         return Optional.empty();
     }
 
-    @Cacheable(key = "#customerId", cacheManager = CacheConfig.Account_DTO_Cache_Manager,
-            cacheNames = CacheConfig.Account_DTO_Cache_Name)
-    public List<AccountDTO> getAccountByCustomerId(Long customerId) {
-        return new ArrayList<>();
-    }
-
     @CachePut(key = "#accountDTO.id", cacheManager = CacheConfig.Account_DTO_Cache_Manager,
             cacheNames = CacheConfig.Account_DTO_Cache_Name)
-    public void saveAccountInCache(AccountDTO accountDTO) {
+    public AccountDTO saveAccountInCache(AccountDTO accountDTO) {return  accountDTO;
     }
 
     @CacheEvict(key = "#id", cacheManager = CacheConfig.Account_DTO_Cache_Manager,
