@@ -35,7 +35,6 @@ public class AccountController {
     @PostMapping
     public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO dto) {
         return ResponseEntity.ok(accountServices.createAccount(dto));
-        //TODO Sprawdzi czy customer już istnieje taki user_id
     }
 
     @DeleteMapping("/{id}")

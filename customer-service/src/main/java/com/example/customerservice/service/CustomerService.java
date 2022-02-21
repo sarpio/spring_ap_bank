@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -57,18 +56,22 @@ public class CustomerService {
     }
 
     public CustomerDTO createCustomer(CustomerDTO dto) {
+
         try{
             Customer customer = EntityDtoMapper.map(dto);
             Customer save = customerRepository.save(customer);
-//            customerCache.saveCustomerInCache(dto);
+            customerCache.saveCustomerInCache(EntityDtoMapper.map(save));
             for(AccountDTO accountDTO : dto.getAccounts()){
                 accountDTO.setCustomerId(save.getId());
                 accountFeignClient.createNewAccount(accountDTO);
-
             }
-            return EntityDtoMapper.map(save);
+                CustomerDTO customerDTO = EntityDtoMapper.map(save);
+                List<AccountDTO> accountDTOS = accountFeignClient.getCustomerAccounts(customerDTO.getId());
+                customerDTO.setAccounts(accountDTOS);
+                return customerDTO;
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "Duplicate customer name");
         }
     }
@@ -93,10 +96,6 @@ public class CustomerService {
 //    }
 
     public String deleteCustomerById(Long id) {
-//        if (accountFeignClient.getCustomerAccounts(id) != null) {
-//            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "Cannot remove Customer if he has an account(s)");
-//        }
-
         if (customerRepository.existsById(id)) {
             customerCache.deleteCustomerFromCache(id);
             customerRepository.deleteById(id);

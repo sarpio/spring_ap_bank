@@ -15,17 +15,17 @@ import javax.validation.constraints.NotNull;
 @Setter
 @Builder
 public class AccountDTO {
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     private Long id;
     @NotNull
     @Min(value = 1000, message = "the value have to start on 1 and have to has 4 numbers")
     @Max(value = 9999, message = "max value is 9999")
-    private String accountNumber;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Long accountNumber;
+    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     private Long customerId;
     @NotNull(message = "Currency type must be selected from valid symbols")
     @Enumerated(EnumType.STRING)
     private String currency;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     private Long balance;
 }

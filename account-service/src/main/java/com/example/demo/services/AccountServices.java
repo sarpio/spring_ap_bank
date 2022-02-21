@@ -21,6 +21,7 @@ public class AccountServices {
     private final AccountRepository accountRepository;
     private final OperationFeignClient operationFeignClient;
     private final AccountCache accountCache;
+    private final CustomerFeignClient customerFeignClient;
 
     public List<AccountDTO> findAllAccounts() {
         List<AccountDTO> accountsDTO = accountRepository
@@ -50,15 +51,33 @@ public class AccountServices {
     }
 
     public AccountDTO createAccount(AccountDTO dto) {
-        if (isNumberDuplicated(dto.getAccountNumber())) {
-            dto.setAccountNumber();
-            System.err.println("Detected duplicated number or number is missing. Account number generated automatically");
-        }
+        dto.setBalance(0.0);
         Account entity = EntityDtoMapper.map(dto);
-        entity.setBalance(0.0);
-        accountRepository.save(entity);
-        accountCache.saveAccountInCache(EntityDtoMapper.map(entity));
-        return EntityDtoMapper.map(entity);
+        checkCustomer(dto);
+        try {
+            accountRepository.save(entity);
+            accountCache.saveAccountInCache(EntityDtoMapper.map(entity));
+            return EntityDtoMapper.map(entity);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            dto.setAccountNumber();
+            System.err.print("Detected duplicated number or number is missing. Account number generated automatically");
+            Account save = accountRepository.save(EntityDtoMapper.map(dto));
+            AccountDTO accountDTO = EntityDtoMapper.map(save);
+            accountCache.saveAccountInCache(accountDTO);
+            return accountDTO;
+        }
+
+    }
+
+    private void checkCustomer(AccountDTO dto) {
+        try {
+            customerFeignClient.getCustomerById(dto.getCustomerId());
+        } catch (Exception ex) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "Customer with id " + dto.getCustomerId() + " is not exist");
+
+        }
     }
 
     public String deleteAccountById(Long id) {
@@ -88,10 +107,4 @@ public class AccountServices {
         return accountDTOS;
 
     }
-
-    private boolean isNumberDuplicated(Long number) {
-        Account byAccountNumber = accountRepository.findByAccountNumber(number);
-        return byAccountNumber != null;
-    }
-
 }

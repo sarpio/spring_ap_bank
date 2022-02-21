@@ -17,9 +17,16 @@ public class AccountCache {
         return Optional.empty();
     }
 
+    @Cacheable(key = "#accountNumber", cacheManager = CacheConfig.Account_DTO_Cache_Manager,
+            cacheNames = CacheConfig.Account_DTO_Cache_Name)
+    public Optional<AccountDTO> getAccountByAccountNumber(Long accountNumber) {
+        return Optional.empty();
+    }
+
     @CachePut(key = "#accountDTO.id", cacheManager = CacheConfig.Account_DTO_Cache_Manager,
             cacheNames = CacheConfig.Account_DTO_Cache_Name)
-    public AccountDTO saveAccountInCache(AccountDTO accountDTO) {return  accountDTO;
+    public AccountDTO saveAccountInCache(AccountDTO accountDTO) {
+        return accountDTO;
     }
 
     @CacheEvict(key = "#id", cacheManager = CacheConfig.Account_DTO_Cache_Manager,
